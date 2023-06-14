@@ -18,11 +18,11 @@
     <h:body styleClass="exception-body access-body">
         <div class="exception-container">
             <p:graphicImage name="#{guestPreferences.darkMode != 'light'? 'images/logo-white.png' : 'images/logo-dark.png'}" library="apollo-layout" />
-            <h1>Access Denied</h1>
+            <h1>Acesso Negado</h1>
             <p>
-               You do not have the necessary privileges.
+               Você não tem os privilégios necessários.
             </p>
-           <p:button outcome="dashboard" value="Go to Dashboard" icon="pi pi-arrow-left" style="border-radius:5px;height:40px;" />
+           <p:button outcome="dashboard" value="Volte ao Dashboard" icon="pi pi-arrow-left" style="border-radius:5px;height:40px;" />
         </div>
     
         <h:outputStylesheet name="css/layout-#{guestPreferences.theme}.css" library="apollo-layout" />

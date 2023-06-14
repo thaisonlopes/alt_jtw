@@ -18,11 +18,11 @@
     <h:body styleClass="exception-body notfound-body">
         <div class="exception-container">
             <p:graphicImage name="#{guestPreferences.darkMode != 'light'? 'images/logo-white.png' : 'images/logo-dark.png'}" library="apollo-layout" />
-            <h1>Not Found</h1>
+            <h1>Não encontrado</h1>
             <p>
-               Resource is not found.
+               Não encontramos os dados que solicitou.
             </p>
-           <p:button outcome="dashboard" value="Go to Dashboard" icon="pi pi-arrow-left" style="border-radius:5px;height:40px;" />
+           <p:button outcome="dashboard" value="Volte ao Dashboard" icon="pi pi-arrow-left" style="border-radius:5px;height:40px;" />
         </div>
         <h:outputStylesheet name="css/primeicons.css" library="apollo-layout" />
         <h:outputStylesheet name="css/layout-#{guestPreferences.theme}.css" library="apollo-layout" />
