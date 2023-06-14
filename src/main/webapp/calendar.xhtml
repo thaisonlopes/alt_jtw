@@ -6,13 +6,13 @@
                 xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
                 template="/WEB-INF/template.xhtml">
 
-    <ui:define name="title">Calendar</ui:define>
+    <ui:define name="title">Calendário</ui:define>
 
     <ui:define name="viewname">
-        <li>Pages</li>
+        <li>Páginas</li>
         <li>/</li>
         <li>
-            <p:link outcome="/calendar">Calendar</p:link>
+            <p:link outcome="/calendar">Calendário</p:link>
         </li>
     </ui:define>
 
@@ -23,7 +23,7 @@
                     <div class="card">
                         <p:growl id="messages" showDetail="true" />
 
-                        <h5>Calendar</h5>
+                        <h5>Calendário</h5>
                         <p:schedule id="schedule" value="#{calendarDemoView.eventModel}" widgetVar="myschedule" >
                             <p:ajax event="dateSelect" listener="#{calendarDemoView.onDateSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />
                             <p:ajax event="eventSelect" listener="#{calendarDemoView.onEventSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />

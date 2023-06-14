@@ -30,28 +30,24 @@
                         <p:menuitem id="m_media" value="Media" icon="pi pi-fw pi-image" outcome="/media" />
                         <p:menuitem id="m_misc" value="Misc" icon="pi pi-fw pi-circle-off" outcome="/misc" />
                     </p:submenu>
-                    <p:submenu id="m_primeblocks" label="Prime Blocks" icon="pi pi-fw pi-prime">
-                        <p:menuitem id="m_freeblocks" value="Free Blocks" icon="pi pi-fw pi-eye" outcome="/blocks"/>
-                        <p:menuitem id="m_allblocks" value="All Blocks" icon="pi pi-fw pi-globe" target="_blank" url="https://www.primefaces.org/primeblocks-jsf"/>
-                    </p:submenu>
-                    <p:submenu id="m_utils" label="Utilities" icon="pi pi-fw pi-compass">
+                    <p:submenu id="m_utils" label="Utilitários" icon="pi pi-fw pi-compass">
                         <p:menuitem id="m_icons" value="PrimeIcons" icon="pi pi-fw pi-prime" outcome="/icons"/>
                         <p:menuitem id="m_flex" value="PrimeFlex" icon="pi pi-fw pi-desktop" target="_blank" url="https://www.primefaces.org/primeflex"/>
                     </p:submenu>
-                    <p:submenu id="m_default" label="Pages" icon="pi pi-fw pi-copy">
+                    <p:submenu id="m_default" label="Páginas" icon="pi pi-fw pi-copy">
                         <p:menuitem id="m_crud" value="Crud" icon="pi pi-fw pi-pencil" outcome="/crud" />
-                        <p:menuitem id="m_calendar" value="Calendar" icon="pi pi-fw pi-calendar-plus" outcome="/calendar" />
+                        <p:menuitem id="m_calendar" value="Calendário" icon="pi pi-fw pi-calendar-plus" outcome="/calendar" />
                         <p:menuitem id="m_chronoline" value="Chronoline" icon="pi pi-fw pi-calendar" outcome="/chronoline" />
                         <p:menuitem id="m_landing" value="Landing" icon="pi pi-fw pi-globe" outcome="/landing" />
                         <p:menuitem id="m_login" value="Login" icon="pi pi-fw pi-sign-in" outcome="/login" />
                         <p:menuitem id="m_invoice" value="Invoice" icon="pi pi-fw pi-dollar" outcome="/invoice" />
                         <p:menuitem id="m_help" value="Help" icon="pi pi-fw pi-question-circle" outcome="/help" />
                         <p:menuitem id="m_error" value="Error" icon="pi pi-fw pi-exclamation-triangle" outcome="/error" />
-                        <p:menuitem id="m_notfound" value="Not Found" icon="pi pi-fw pi-times" outcome="/notfound" />
-                        <p:menuitem id="m_access" value="Access Denied" icon="pi pi-fw pi-ban" outcome="/access" />
-                        <p:menuitem id="m_empty" value="Empty" icon="pi pi-fw pi-clone" outcome="/empty" />
+                        <p:menuitem id="m_notfound" value="Não encontrada" icon="pi pi-fw pi-times" outcome="/notfound" />
+                        <p:menuitem id="m_access" value="Acesso Negado" icon="pi pi-fw pi-ban" outcome="/access" />
+                        <p:menuitem id="m_empty" value="Vazio" icon="pi pi-fw pi-clone" outcome="/empty" />
                     </p:submenu>
-                    <p:submenu id="m_hierarchy" label="Hierarchy" icon="pi pi-fw pi-align-left">
+                    <p:submenu id="m_hierarchy" label="Hierarquia" icon="pi pi-fw pi-align-left">
                         <p:submenu id="m_sm1" label="Submenu 1" icon="pi pi-fw pi-align-left">
                             <p:submenu id="m_sm11" label="Submenu 1.1" icon="pi pi-fw pi-align-left">
                                 <p:menuitem id="m_lnk111" value="Link 1.1.1" icon="pi pi-fw pi-align-left" url="#" />
@@ -72,18 +68,14 @@
                             </p:submenu>
                         </p:submenu>
                     </p:submenu>
-                    <p:submenu id="m_getstarted" label="Start" icon="pi pi-fw pi-download">
-                        <p:menuitem id="m_doc" value="Documentation" icon="pi pi-fw pi-file" outcome="/documentation"/>
-                        <p:menuitem id="m_buy" value="Buy Now" icon="pi pi-fw pi-money-bill" url="https://www.primefaces.org/store" />
-                    </p:submenu>
                 </pa:menu>
                 <div class="layout-menu-footer">
-                    <div class="layout-menu-footer-title">TASKS</div>
+                    <div class="layout-menu-footer-title">Tarefas</div>
                     <div class="layout-menu-footer-content">
                         <p:progressBar value="50" labelTemplate="" displayOnly="true"/>
-                        Today
+                        Hoje
                         <p:progressBar value="80" labelTemplate=""  displayOnly="true"/>
-                        Overall
+                        Geral
                     </div>
                 </div>
             </h:form>
