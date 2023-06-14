@@ -1,0 +1,94 @@
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pa="http://primefaces.org/apollo">
+
+    <div class="layout-menu-container">
+        <div class="menu-scroll-content">
+            <div class="layout-menu-title">MENU</div>
+            <h:form id="menuform">
+                <pa:menu widgetVar="ApolloMenuWidget">
+                    <p:menuitem id="m_dashboard" value="Dashboard" icon="pi pi-fw pi-home" outcome="/dashboard" />
+                    <p:submenu id="m_components" label="UI Kit" icon="pi pi-fw pi-star">
+                        <p:menuitem id="m_formlayout" value="Form Layout" icon="pi pi-fw pi-id-card" outcome="/formlayout" />
+                        <p:menuitem id="m_input" value="Input" icon="pi pi-fw pi-check-square" outcome="/input" />
+                        <p:menuitem id="m_floatlabel" value="Float Label" icon="pi pi-fw pi-bookmark" outcome="/floatlabel" />
+                        <p:menuitem id="m_invalidstate" value="Invalid State" icon="pi pi-fw pi-exclamation-circle" outcome="/invalidstate" />
+                        <p:menuitem id="m_button" value="Button" icon="pi pi-fw pi-mobile" outcome="/button" styleClass="rotated-icon"/>
+                        <p:menuitem id="m_table" value="Table" icon="pi pi-fw pi-table" outcome="/table" />
+                        <p:menuitem id="m_list" value="List" icon="pi pi-fw pi-list" outcome="/list" />
+                        <p:menuitem id="m_tree" value="Tree" icon="pi pi-fw pi-share-alt" outcome="/tree" />
+                        <p:menuitem id="m_panel" value="Panel" icon="pi pi-fw pi-tablet" outcome="/panel" />
+                        <p:menuitem id="m_overlay" value="Overlay" icon="pi pi-fw pi-clone" outcome="/overlay" />
+                        <p:menuitem id="m_menu" value="Menu" icon="pi pi-fw pi-bars" outcome="/menu" />
+                        <p:menuitem id="m_message" value="Message" icon="pi pi-fw pi-comment" outcome="/messages" />
+                        <p:menuitem id="m_file" value="File" icon="pi pi-fw pi-file" outcome="/file" />
+                        <p:menuitem id="m_chart" value="Chart" icon="pi pi-fw pi-chart-bar" outcome="/charts" />
+                        <p:menuitem id="m_media" value="Media" icon="pi pi-fw pi-image" outcome="/media" />
+                        <p:menuitem id="m_misc" value="Misc" icon="pi pi-fw pi-circle-off" outcome="/misc" />
+                    </p:submenu>
+                    <p:submenu id="m_primeblocks" label="Prime Blocks" icon="pi pi-fw pi-prime">
+                        <p:menuitem id="m_freeblocks" value="Free Blocks" icon="pi pi-fw pi-eye" outcome="/blocks"/>
+                        <p:menuitem id="m_allblocks" value="All Blocks" icon="pi pi-fw pi-globe" target="_blank" url="https://www.primefaces.org/primeblocks-jsf"/>
+                    </p:submenu>
+                    <p:submenu id="m_utils" label="Utilities" icon="pi pi-fw pi-compass">
+                        <p:menuitem id="m_icons" value="PrimeIcons" icon="pi pi-fw pi-prime" outcome="/icons"/>
+                        <p:menuitem id="m_flex" value="PrimeFlex" icon="pi pi-fw pi-desktop" target="_blank" url="https://www.primefaces.org/primeflex"/>
+                    </p:submenu>
+                    <p:submenu id="m_default" label="Pages" icon="pi pi-fw pi-copy">
+                        <p:menuitem id="m_crud" value="Crud" icon="pi pi-fw pi-pencil" outcome="/crud" />
+                        <p:menuitem id="m_calendar" value="Calendar" icon="pi pi-fw pi-calendar-plus" outcome="/calendar" />
+                        <p:menuitem id="m_chronoline" value="Chronoline" icon="pi pi-fw pi-calendar" outcome="/chronoline" />
+                        <p:menuitem id="m_landing" value="Landing" icon="pi pi-fw pi-globe" outcome="/landing" />
+                        <p:menuitem id="m_login" value="Login" icon="pi pi-fw pi-sign-in" outcome="/login" />
+                        <p:menuitem id="m_invoice" value="Invoice" icon="pi pi-fw pi-dollar" outcome="/invoice" />
+                        <p:menuitem id="m_help" value="Help" icon="pi pi-fw pi-question-circle" outcome="/help" />
+                        <p:menuitem id="m_error" value="Error" icon="pi pi-fw pi-exclamation-triangle" outcome="/error" />
+                        <p:menuitem id="m_notfound" value="Not Found" icon="pi pi-fw pi-times" outcome="/notfound" />
+                        <p:menuitem id="m_access" value="Access Denied" icon="pi pi-fw pi-ban" outcome="/access" />
+                        <p:menuitem id="m_empty" value="Empty" icon="pi pi-fw pi-clone" outcome="/empty" />
+                    </p:submenu>
+                    <p:submenu id="m_hierarchy" label="Hierarchy" icon="pi pi-fw pi-align-left">
+                        <p:submenu id="m_sm1" label="Submenu 1" icon="pi pi-fw pi-align-left">
+                            <p:submenu id="m_sm11" label="Submenu 1.1" icon="pi pi-fw pi-align-left">
+                                <p:menuitem id="m_lnk111" value="Link 1.1.1" icon="pi pi-fw pi-align-left" url="#" />
+                                <p:menuitem id="m_lnk112" value="Link 1.1.2" icon="pi pi-fw pi-align-left" url="#" />
+                                <p:menuitem id="m_lnk113" value="Link 1.1.3" icon="pi pi-fw pi-align-left" url="#" />
+                            </p:submenu>
+                            <p:submenu id="m_sm12" label="Submenu 1.2" icon="pi pi-fw pi-align-left">
+                                <p:menuitem id="m_lnk121" value="Link 1.2.1" icon="pi pi-fw pi-align-left" url="#" />
+                            </p:submenu>
+                        </p:submenu>
+                        <p:submenu id="m_sm2" label="Submenu 2" icon="pi pi-fw pi-align-left">
+                            <p:submenu id="m_sm21" label="Submenu 2.1" icon="pi pi-fw pi-align-left">
+                                <p:menuitem id="m_lnk211" value="Link 2.1.1" icon="pi pi-fw pi-align-left" url="#" />
+                                <p:menuitem id="m_lnk212" value="Link 2.1.2" icon="pi pi-fw pi-align-left" url="#" />
+                            </p:submenu>
+                            <p:submenu id="m_sm22" label="Submenu 2.2" icon="pi pi-fw pi-align-left">
+                                <p:menuitem id="m_lnk221" value="Link 2.2.1" icon="pi pi-fw pi-align-left" url="#" />
+                            </p:submenu>
+                        </p:submenu>
+                    </p:submenu>
+                    <p:submenu id="m_getstarted" label="Start" icon="pi pi-fw pi-download">
+                        <p:menuitem id="m_doc" value="Documentation" icon="pi pi-fw pi-file" outcome="/documentation"/>
+                        <p:menuitem id="m_buy" value="Buy Now" icon="pi pi-fw pi-money-bill" url="https://www.primefaces.org/store" />
+                    </p:submenu>
+                </pa:menu>
+                <div class="layout-menu-footer">
+                    <div class="layout-menu-footer-title">TASKS</div>
+                    <div class="layout-menu-footer-content">
+                        <p:progressBar value="50" labelTemplate="" displayOnly="true"/>
+                        Today
+                        <p:progressBar value="80" labelTemplate=""  displayOnly="true"/>
+                        Overall
+                    </div>
+                </div>
+            </h:form>
+        </div>
+    </div>
+
+
+</ui:composition>

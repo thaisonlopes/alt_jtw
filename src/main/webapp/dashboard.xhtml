@@ -1,0 +1,613 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+    <ui:define name="viewname">
+        <li><i class="pi pi-home"/></li>
+        <li>/</li>
+        <li>
+            <p:link outcome="/dashboard">Dashboard</p:link>
+        </li>
+    </ui:define>
+    <ui:define name="head">
+        <h:outputScript name="chartjs/chart.js" library="demo" />
+        <script type="text/javascript">
+            //<![CDATA[
+            Chart.defaults.global.defaultFontColor = '#8FA6B8';
+            setInterval(function () {
+                setAnimation(PF('knob1'));
+                setAnimation(PF('knob2'));
+                setAnimation(PF('knob3'));
+                setAnimation(PF('knob4'));
+                PF('pb1').setValue(generateRandomNumber());
+                PF('pb2').setValue(generateRandomNumber());
+                PF('pb3').setValue(generateRandomNumber());
+                PF('pb4').setValue(generateRandomNumber());
+            }, 2000);
+
+            function setAnimation(widget) {
+                widget.jq.animate({value: generateRandomNumber()}, {
+                    duration: 1000,
+                    easing: 'linear',
+                    progress: function()
+                    {
+                        widget.setValue(Math.floor(this.value));
+                    }
+                });
+            }
+
+            function generateRandomNumber() {
+                return Math.floor(Math.random() * 100) + 1;
+            }
+            $(function () {
+                    var ordersChart = new Chart(document.getElementById("order-chart").getContext('2d'), {
+                        type: 'bar',
+                    data: {
+                        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                        datasets: [{
+                            label: 'Profit',
+                            data: [20, 40, 20, 70, 20, 49, 30],
+                            backgroundColor:'rgba(57, 163, 244, .7)',
+                            borderWidth: 0,
+                            fill: false,
+                        }, {
+                            label: 'Cost',
+                            data: [5, 19,10, 10, 22, 14, 10],
+                            backgroundColor: 'rgba(222, 162, 66, .7)',
+                            borderWidth: 0,
+                            fill: false,
+                        },
+                        {
+                            label: 'Revenue',
+                            data: [45, 80, 70, 90, 30, 90, 50],
+                            backgroundColor:'rgba(118, 190, 69, .8)',
+                            borderWidth: 0,
+                            fill: false,
+                        }]
+                    },
+                    options: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                fontColor: '#8FA6B8'
+                            }
+                        },
+                        maintainAspectRatio: false,
+                        hover: {
+                            mode: 'index'
+                        },
+                        scales: {
+                            xAxes: [{
+                                display: true,
+                                stacked: true,
+                                barPercentage: 0.4,
+                                gridLines: {
+                                    color:  'rgba(143, 166, 184, .3)',
+                                }
+                            }],
+                            yAxes: [{
+                                display: true,
+                                stacked: true,
+                                gridLines: {
+                                    color:  'rgba(143, 166, 184, .3)',
+                                }
+                            }]
+                        }
+                    }
+                });
+            });
+            //]]>
+        </script>
+        
+        <style type="text/css">
+            .jqplot-xaxis-label {
+                color: #9fadb7;
+                display: none;
+            }
+            .jqplot-yaxis-label {
+                color: #9fadb7;
+            }
+        </style>
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="grid dashboard">
+            <div class="col-12 md:col-3">
+                <div class="overview-box-nobg blue">
+                    <div class="overview-top">
+                        <div class="overview-info">
+                            <h6>SALES</h6>
+                            <div class="overview-value">$25,620</div>
+                        </div>
+                        <div class="overview-ratio">
+                            <div class="overview-direction">
+                                <i class="pi pi-arrow-up" />
+                            </div>
+                            <div class="overview-ratio-value">
+                                51%
+                            </div>
+                        </div>
+                    </div>
+                    <p:graphicImage name="images/dashboard/graph-blue.svg" library="apollo-layout"/>
+                </div>
+            </div>
+            <div class="col-12 md:col-3">
+                <div class="overview-box-nobg green">
+                    <div class="overview-top">
+                        <div class="overview-info">
+                            <h6>VIEWS</h6>
+                            <div class="overview-value">9521</div>
+                        </div>
+                        <div class="overview-ratio">
+                            <div class="overview-direction">
+                                <i class="pi pi-arrow-up" />
+                            </div>
+                            <div class="overview-ratio-value">
+                                36%
+                            </div>
+                        </div>
+                    </div>
+                    <p:graphicImage name="images/dashboard/graph-green.svg" library="apollo-layout"/>
+                </div>
+            </div>
+            <div class="col-12 md:col-3">
+                <div class="overview-box-nobg orange">
+                    <div class="overview-top">
+                        <div class="overview-info">
+                            <h6>USERS</h6>
+                            <div class="overview-value">452</div>
+                        </div>
+                        <div class="overview-ratio">
+                            <div class="overview-direction">
+                                <i class="pi pi-arrow-up" />
+                            </div>
+                            <div class="overview-ratio-value">
+                                19%
+                            </div>
+                        </div>
+                    </div>
+                    <p:graphicImage name="images/dashboard/graph-yellow.svg" library="apollo-layout"/>
+                </div>
+            </div>
+            <div class="col-12 md:col-3">
+                <div class="overview-box-nobg red">
+                    <div class="overview-top">
+                        <div class="overview-info">
+                            <h6>SOCIAL</h6>
+                            <div class="overview-value">65922</div>
+                        </div>
+                        <div class="overview-ratio">
+                            <div class="overview-direction">
+                                <i class="pi pi-arrow-up" />
+                            </div>
+                            <div class="overview-ratio-value">
+                                25%
+                            </div>
+                        </div>
+                    </div>
+                    <p:graphicImage name="images/dashboard/graph-red.svg" library="apollo-layout"/>
+                </div>
+            </div>
+            <div class="col-12 ">
+                <p:panel header="Status" styleClass="knobs ">
+                    <div class="grid">
+                        <div class="col-12 lg:col-3 md:col-6 knob-sales">
+                            <div class="knob-title" style="color:#2C9BF0">Sales</div>
+                            <p:knob foregroundColor="#2C9BF0" backgroundColor="rgba(0,0,0,.3)" value="44" height="150" width="150" widgetVar="knob4" thickness=".1"/>
+                            <i class="pi pi-dollar" />
+                        </div>
+                        <div class="col-12 lg:col-3 md:col-6 knob-mobile">
+                            <div class="knob-title">Mobile</div>
+                            <p:knob foregroundColor="#6EBA3B" backgroundColor="rgba(0,0,0,.3)" value="57" height="150" width="150" widgetVar="knob2" thickness=".1"/>
+                            <i class="pi pi-mobile" />
+                        </div>
+                        <div class="col-12 lg:col-3 md:col-6 knob-users">
+                            <div class="knob-title">Users</div>
+                            <p:knob foregroundColor="#DA9B36" backgroundColor="rgba(0,0,0,.3)" value="25" height="150" width="150" widgetVar="knob1" thickness=".1"/>
+                            <i class="pi pi-user" />
+                        </div>
+                        <div class="col-12 lg:col-3 md:col-6 knob-pageviews">
+                            <div class="knob-title">Pageviews</div>
+                            <p:knob foregroundColor="#d67161" backgroundColor="rgba(0,0,0,.3)" value="85" height="150" width="150" widgetVar="knob3" thickness=".1"/>
+                            <i class="pi pi-eye" />
+                        </div>
+                    </div>
+                </p:panel>
+            </div>
+
+            <div class="col-12 md:col-6 lg:col-4 task-list">
+                <p:panel header="Tasks">
+                    <ul>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Sales Reports</span>
+                            <i class="pi pi-briefcase"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Pay Invoices</span>
+                            <i class="pi pi-money-bill"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Dinner with Tony</span>
+                            <i class="pi pi-users"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Client Meeting</span>
+                            <i class="pi pi-user"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">New Theme</span>
+                            <i class="pi pi-palette"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Flight Ticket</span>
+                            <i class="pi pi-ticket"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Generate Charts</span>
+                            <i class="pi pi-chart-bar"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Call Client</span>
+                            <i class="pi pi-mobile"/>
+                        </li>
+                    </ul>
+                </p:panel>
+            </div>
+            <div class="col-12 md:col-6 lg:col-4 ui-fluid contact-form">
+                <p:panel header="Message">
+                    <div class="grid">
+                        <div class="col-12">
+                            <p:selectOneMenu id="console" value="#{selectOneMenuView.console}" autoWidth="false">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItem itemLabel="Sales" itemValue="Sales" />
+                                <f:selectItem itemLabel="Support" itemValue="Support" />
+                                <f:selectItem itemLabel="Finance" itemValue="Finance" />
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="col-12">
+                            <p:inputText placeholder="Name"/>
+                        </div>
+                        <div class="col-12">
+                            <p:inputText placeholder="Email"/>
+                        </div>
+                        <div class="col-12">
+                            <p:inputText placeholder="Location"/>
+                        </div>
+                        <div class="col-12">
+                            <p:inputTextarea placeholder="Message" cols="5" autoResize="false"/>
+                        </div>
+                        <div class="col-12">
+                            <p:commandButton type="button" value="Send" icon="pi pi-arrow-right"/>
+                        </div>
+                    </div>
+                </p:panel>
+            </div>
+            <div class="col-12 lg:col-4 contacts">
+                <p:panel header="Contacts">
+                    <ul>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar.png" library="apollo-layout" width="45"/>
+                            <div class="contact-info">
+                                <span class="name">Sarah Miller (me)</span>
+                                <span class="location">sarah@pf-apollo.com</span>
+                            </div>
+                            <div class="contact-actions">
+                                <p:commandButton type="button" icon="pi pi-arrow-right" styleClass="ui-button-info"/>
+                                <p:commandButton type="button" icon="pi pi-mobile" styleClass="ui-button-success"/>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar1.png" library="apollo-layout" width="45"/>
+                            <div class="contact-info">
+                                <span class="name">Joshua Williams</span>
+                                <span class="location">joshua@pf-apollo.com</span>
+                            </div>
+                            <div class="contact-actions">
+                                <p:commandButton type="button" icon="pi pi-arrow-right" styleClass="ui-button-info"/>
+                                <p:commandButton type="button" icon="pi pi-mobile" styleClass="ui-button-success"/>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar2.png" library="apollo-layout" width="45"/>
+                            <div class="contact-info">
+                                <span class="name">Emily Clark</span>
+                                <span class="location">emily@pf-apollo.com</span>
+                            </div>
+                            <div class="contact-actions">
+                                <p:commandButton type="button" icon="pi pi-arrow-right" styleClass="ui-button-info"/>
+                                <p:commandButton type="button" icon="pi pi-mobile" styleClass="ui-button-success"/>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar3.png" library="apollo-layout" width="45"/>
+                            <div class="contact-info">
+                                <span class="name">Tim Johnson</span>
+                                <span class="location">tim@pf-apollo.com</span>
+                            </div>
+                            <div class="contact-actions">
+                                <p:commandButton type="button" icon="pi pi-arrow-right" styleClass="ui-button-info"/>
+                                <p:commandButton type="button" icon="pi pi-mobile" styleClass="ui-button-success"/>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar4.png" library="apollo-layout" width="45"/>
+                            <div class="contact-info">
+                                <span class="name">David Stark</span>
+                                <span class="location">kelly@pf-apollo.com</span>
+                            </div>
+                            <div class="contact-actions">
+                                <p:commandButton type="button" icon="pi pi-arrow-right" styleClass="ui-button-info"/>
+                                <p:commandButton type="button" icon="pi pi-mobile" styleClass="ui-button-success"/>
+                            </div>
+                        </li>
+                    </ul>
+                </p:panel>
+            </div>
+
+            <div class="col-12 lg:col-8 ">
+                <div class="grid">
+                    <div class="col-12">
+                        <p:panel header="Total Sales" styleClass="chart">
+                            <canvas id="order-chart" style="min-height: 400px;"/>
+                        </p:panel>
+                      
+                    </div>
+                    <div class="col-12">
+                        <div class="sales-panel">
+                            <h:form id="form">
+                                <p:dataTable id="ordersTable" var="order" value="#{dashboardView.orders}" selectionMode="single" reflow="true" paginatorPosition="bottom"
+                                    rowKey="#{order.id}" paginator="true" rows="5" sortBy="#{order.date}" sortOrder="descending" >
+                                    <p:column headerText="Id" sortBy="#{order.id}">
+                                        <h:outputText value="#{order.id}" />
+                                    </p:column>
+        
+                                    <p:column headerText="Date" sortBy="#{order.date}">
+                                        <h:outputText value="#{order.date}" />
+                                    </p:column>
+        
+                                    <p:column headerText="Amount" sortBy="#{order.amount}">
+                                        <h:outputText value="#{order.amount}">
+                                            <f:convertNumber currencySymbol="$" type="currency" />
+                                        </h:outputText>
+                                    </p:column>
+        
+                                    <p:column headerText="Status" sortBy="#{order.status}">
+                                        <span class="order-badge order-#{order.status.name().toLowerCase()}">#{order.status}</span>
+                                    </p:column>
+        
+                                    <p:column style="width: 3.5rem">
+                                        <p:commandButton icon="pi pi-search" />
+                                    </p:column>
+                                </p:dataTable>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 lg:col-4">
+                <div class="card timeline ui-fluid">
+                    <div class="grid">
+                        <div class="col-3">
+                            <span class="event-time">just now</span>
+                            <i class="pi pi-map-marker" style="color:#147df0"/>
+                        </div>
+                        <div class="col-9">
+                            <span class="event-owner" style="color:#147df0">Katherine May</span>
+                            <span class="event-text">Lorem ipsun dolor amet</span>
+                            <div class="event-content">
+                                <p:graphicImage name="images/dashboard/bridge.jpg" library="apollo-layout" width="100"/>
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <span class="event-time">12h ago</span>
+                            <i class="pi pi-star" style="color:#ed3c76"/>
+                        </div>
+                        <div class="col-9">
+                            <span class="event-owner" style="color:#ed3c76">Brandon Santos</span>
+                            <span class="event-text">Ab nobis, magnam sunt eum. Laudantium, repudiandae, similique!.</span>
+                        </div>
+
+                        <div class="col-3">
+                            <span class="event-time">15h ago</span>
+                            <i class="pi pi-comment" style="color:#3e9018"/>
+                        </div>
+                        <div class="col-9">
+                            <span class="event-owner" style="color:#2EB872">Stephan Ward</span>
+                            <span class="event-text">Omnis veniam quibusdam ratione est repellat qui nam quisquam ab mollitia dolores ullam voluptates, similique, dignissimos.</span>
+                        </div>
+
+                        <div class="col-3">
+                            <span class="event-time">2d ago</span>
+                            <i class="pi pi-map-marker" style="color:#ffb200"/>
+                        </div>
+                        <div class="col-9">
+                            <span class="event-owner" style="color:#ffb200">Jason Smith</span>
+                            <span class="event-text">Laudantium, repudiandae, similique!</span>
+                            <div class="event-content">
+                                <p:graphicImage name="images/dashboard/map.png" library="apollo-layout" />
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <span class="event-time">1w ago</span>
+                            <i class="pi pi-heart" style="color:#633ea5"/>
+                        </div>
+                        <div class="col-9">
+                            <span class="event-owner">Kevin Cox</span>
+                            <span class="event-text">Quibusdam ratione est repellat qui nam quisquam veniam quibusdam ratione.</span>
+                        </div>
+
+                        <div class="col-3">
+                            <span class="event-time">2w ago</span>
+                            <i class="pi pi-list" style="color:#599597"/>
+                        </div>
+                        <div class="col-9">
+                            <span class="event-owner" style="color:#599597">Walter White</span>
+                            <span class="event-text">I am the one who knocks!</span>
+                        </div>
+
+                        <div class="col-12">
+                            <p:commandButton type="button" value="Refresh" icon="pi pi-refresh" styleClass="ui-button-raised rounded-button"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 md:col-7 chat">
+                <p:panel header="Chat">
+                    <ul>
+                        <li class="clearfix message-from">
+                            <p:graphicImage name="images/avatar2.png" library="apollo-layout" />
+                            <span>Retro occupy organic, stumptown shabby chic pour-over roof party DIY normcore.</span>
+                        </li>
+                        <li class="clearfix message-own">
+                            <p:graphicImage name="images/avatar.png" library="apollo-layout" />
+                            <span>Actually artisan organic occupy, Wes Anderson ugh whatever pour-over gastropub selvage.</span>
+                        </li>
+                        <li class="clearfix message-from">
+                            <p:graphicImage name="images/avatar2.png" library="apollo-layout" />
+                            <span>Chillwave craft beer tote bag stumptown quinoa hashtag.</span>
+                        </li>
+                        <li class="clearfix message-own">
+                            <p:graphicImage name="images/avatar.png" library="apollo-layout" />
+                            <span>Dreamcatcher locavore iPhone chillwave, occupy trust fund slow-carb distillery art party narwhal.</span>
+                        </li>
+                        <li class="clearfix message-own">
+                            <span>Sed ut perspiciatis unde omnis iste natus.</span>
+                        </li>
+                        <li class="clearfix message-from">
+                            <p:graphicImage name="images/avatar2.png" library="apollo-layout" />
+                            <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.</span>
+                        </li>
+                        <li class="clearfix message-own">
+                            <p:graphicImage name="images/avatar.png" library="apollo-layout" />
+                            <span>At vero eos et accusamus.</span>
+                        </li>
+                    </ul>
+                    <div class="new-message">
+                        <div class="message-attachment">
+                            <i class="pi pi-paperclip" />
+                        </div>
+                        <div class="message-input">
+                            <input type="text" placeholder="Write a message" class="ui-inputfield" />
+                        </div>
+                    </div>
+                </p:panel>
+            </div>
+            <div class="col-12 md:col-5">
+                <p:panel header="Disk Spaces" styleClass="disk-spaces">
+                    <span>4.2 TB Used</span>
+                    <p:progressBar value="75" widgetVar="pb1"/>
+
+                    <span>2.9 TB Used</span>
+                    <p:progressBar value="45" widgetVar="pb2" />
+
+                    <span>5.9 TB Used</span>
+                    <p:progressBar value="85" widgetVar="pb3" />
+
+                    <span>1.9 TB Used</span>
+                    <p:progressBar value="25" widgetVar="pb4" />
+                </p:panel>
+            </div>
+
+            <div class="col-12 lg:col-4">
+                <div class="grid">
+                    <div class="col-12">
+                        <div class="user-card card">
+                            <div class="user-card-header">
+                                <div class="user-card-name">
+                                    <p:graphicImage name="images/avatar.png" library="apollo-layout" />
+                                    <span>Sarah Miller</span>
+                                </div>
+                                <p:commandButton id="user-button" type="button" icon="pi pi-plus" styleClass="ui-button-secondary"/>
+                                <p:menu overlay="true" trigger="user-button" my="left top" at="left bottom">
+                                    <p:menuitem value="Save" icon="pi pi-check" url="#"/>
+                                    <p:menuitem value="Update" icon="pi pi-refresh" url="#"/>
+                                    <p:menuitem value="Delete" icon="pi pi-times" url="#"/>
+                                </p:menu>
+                            </div>
+                            <div class="user-card-content">
+                                <div class="user-detail">
+                                   <ul>
+                                     <li class="clearfix">
+                                         <i class="pi pi-list "/>
+                                         <span class="project-title">Tasks</span>
+                                         <span class="project-detail">3 open</span>
+                                         <div class="project-progressbar">
+                                             <div class="project-progressbar-value" style="width: 50%"></div>
+                                         </div>
+                                     </li>
+                                     <li class="clearfix">
+                                         <i class="pi pi-dollar "/>
+                                         <span class="project-title">Revenue</span>
+                                         <span class="project-detail">+20%</span>
+                                         <div class="project-progressbar">
+                                             <div class="project-progressbar-value" style="width: 20%"></div>
+                                         </div>
+                                     </li>
+                                     <li class="clearfix">
+                                         <i class="pi pi-money-bill "/>
+                                         <span class="project-title">Payments</span>
+                                         <span class="project-detail">24 new</span>
+                                         <div class="project-progressbar">
+                                             <div class="project-progressbar-value" style="width: 65%"></div>
+                                         </div>
+                                     </li>
+                                     <li class="clearfix">
+                                         <i class="pi pi-users "/>
+                                         <span class="project-title">Clients</span>
+                                         <span class="project-detail">+80%</span>
+                                         <div class="project-progressbar">
+                                             <div class="project-progressbar-value" style="width: 80%"></div>
+                                         </div>
+                                     </li>
+                                     <li class="clearfix">
+                                         <i class="pi pi-users "/>
+                                         <span class="project-title">Turnover</span>
+                                         <span class="project-detail">+40%</span>
+                                         <div class="project-progressbar">
+                                             <div class="project-progressbar-value" style="width: 40%"></div>
+                                         </div>
+                                     </li>
+                                   </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p:panel header="Map">
+                            <p:graphicImage name="images/dashboard/location.jpg" library="apollo-layout" style="width: 100%;"/>
+                        </p:panel>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 md:col-8">
+                <div class="card">
+                    <h:form>
+                        <p:schedule id="schedule" value="#{calendarDemoView.eventModel}" widgetVar="myschedule" >
+                            <p:ajax event="dateSelect" listener="#{calendarDemoView.onDateSelect}" />
+                            <p:ajax event="eventSelect" listener="#{calendarDemoView.onEventSelect}"  />
+                            <p:ajax event="eventMove" listener="#{calendarDemoView.onEventMove}" />
+                            <p:ajax event="eventResize" listener="#{calendarDemoView.onEventResize}" />
+                        </p:schedule>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

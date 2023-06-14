@@ -1,0 +1,43 @@
+html {
+    height: 100%;
+    font-size: $fontSize;
+}
+
+/* Main Layout */
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100%;
+    background-color: $bodyBgColor;
+    color: $textColor;
+}
+a {
+    text-decoration: none;
+    color: $primaryColor;
+}
+
+.layout-ajax-loader-icon {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    font-size: 2rem;
+    color: $primaryColor;
+    z-index: 999;
+}
+
+.layout-content {
+    @include flex();
+    @include flex-direction-column();
+    @include flex-justify-between();
+    min-height: 100vh;
+
+    .layout-content-container {
+        flex: 1 1 auto;
+    }
+}
+
+

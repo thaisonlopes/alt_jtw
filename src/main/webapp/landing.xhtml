@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+        <title>PrimeFaces Apollo</title>
+        <script type="text/javascript">
+        $(function() {
+            $('#menu-button').on('click', function(e) {
+                $('#menu').toggleClass('overlay-menu');
+                e.preventDefault();
+            });
+        });
+        </script>
+        <ui:insert name="head"/>
+    </h:head>
+
+    <h:body styleClass="landing-body">
+        <div class="landing-wrapper">
+            <div class="landing-header">
+                <div class="landing-header-content clearfix">
+                    <p:graphicImage name="images/logo-white.png" library="apollo-layout" />
+                    
+                    <a id="menu-button" href="#">
+                        <span class="pi pi-bars"></span>
+                    </a>
+                    <ul id="menu">
+                        <li><a href="#"><i class="menu-icon pi pi-home"></i>Home</a></li>
+                        <li><a href="#introduction"><i class="menu-icon pi pi-file"></i>Introduction</a></li>
+                        <li><a href="#landing-feature"><i class="menu-icon pi pi-sitemap"></i>Features</a></li>
+                        <li><a href="#mobile"><i class="menu-icon pi pi-mobile"></i>Mobile</a></li>
+                        <li><a href="#testimonials"><i class="menu-icon pi pi-bookmark"></i>Testimonials</a></li>
+                        <li><a href="#pricing"><i class="menu-icon pi pi-dollar"></i>Pricing</a></li>
+                        <li><a href="#video"><i class="menu-icon pi pi-video"></i>Video</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="introduction">
+                <div class="introduction-content">
+                    <p class="title">PrimeFaces Presents Apollo</p>
+                    <p class="subtitle">Modern and elegant responsive application template with a premium look for PrimeFaces components.</p>
+                    <p:commandButton type="button" value="Learn More"></p:commandButton>
+                </div>
+            </div>
+            
+            <div id="landing-feature">
+                <div class="landing-container">
+                    <div class="grid">
+                        <div class="col-12 md:col-6 lg:col-3 centerText">
+                            <i class="pi pi-briefcase pi-feature" aria-hidden="true"></i>
+                            <h2>Creative</h2>
+                            <p>
+                                Vitae potenti ante praesent <br/>
+                                a dui eget nibh eu quam <br/>
+                                accumsan porttitor tincidunt 
+                            </p>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-3 centerText">
+                            <i class="pi pi-eye pi-feature" aria-hidden="true"></i>
+                            <h2>Responsive</h2>
+                            <p>
+                                Vitae potenti ante praesent <br/>
+                                a dui eget nibh eu quam <br/>
+                                accumsan porttitor tincidunt 
+                            </p>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-3 centerText">
+                            <i class="pi pi-clone pi-feature" aria-hidden="true"></i>
+                            <h2>Cross Browser</h2>
+                            <p>
+                                Vitae potenti ante praesent <br/>
+                                a dui eget nibh eu quam <br/>
+                                accumsan porttitor tincidunt 
+                            </p>
+                        </div>
+                        <div class="col-12 md:col-6 lg:col-3 centerText">
+                            <i class="pi pi-sitemap pi-feature" aria-hidden="true"></i>
+                            <h2>Well Organized</h2>
+                            <p>
+                                Vitae potenti ante praesent <br/>
+                                a dui eget nibh eu quam <br/>
+                                accumsan porttitor tincidunt 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="mobile">
+                <div class="mobile-content">
+                    <p:graphicImage name="images/landing_rocket.png" library="apollo-layout" />
+                    <span class="title">Try Our Mobile App!</span>
+                    <span class="subtitle">Available at App Store and Google Play.</span>
+                    <p:commandButton type="button" value="Learn More" styleClass="ui-button-success"></p:commandButton>
+                </div>
+            </div>
+            
+            <div id="testimonials">
+                <div class="grid">
+                    <div class="col-12">
+                        <div class="testimonials-container">
+                            <h1 class="testimonials-title">Testimonials</h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
+                                doloremque.</p>
+                            <div class="testimonials-content">
+                                <p id="testimonials-text">
+                                    Beautiful design, straight - forward code, and a very flexible template.
+                                    Now I can easily build my own product landing page. Thanks 
+                                </p>
+                                <p:graphicImage name="images/landing_avatar.png" library="apollo-layout" />
+                                <p>Grace Montgomery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="pricing">
+                <div class="pricing-content">
+                    <span class="pricing-title">Pricing</span>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        doloremque laudantium, totam rem aperiam.</p>
+                        
+                    <div class="grid">
+                        <div class="col-12 md:col-4">
+                            <div class="pricing-basic pricing-box">
+                                <span class="pricing-name">Basic</span>
+                                <div class="pricing-fee">1$</div>
+                                
+                                <p>50GB Disk Space</p>
+                                <p>500GB Monthly Bandwith</p>
+                                <p>20 Email Accounts</p>
+                                <p>5 Subdomain</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 md:col-4">
+                            <div class="pricing-standard pricing-box">
+                                <span class="pricing-name">Standard</span>
+                                <div class="pricing-fee">5$</div>
+                                
+                                <p>200GB Disk Space</p>
+                                <p>1TB Monthly Bandwith</p>
+                                <p>50 Email Accounts</p>
+                                <p>10 Subdomain</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 md:col-4">
+                            <div class="pricing-professional pricing-box">
+                                <span class="pricing-name">Professional</span>
+                                <div class="pricing-fee">10$</div>
+                                
+                                <p>2TB Disk Space</p>
+                                <p>10TB Monthly Bandwith</p>
+                                <p>Unlimited Email Accounts</p>
+                                <p>50 Subdomain</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="video">
+                <div class="video-content">
+                    <span class="video-title">Video</span>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium 
+                        doloremque.</p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/B_lYGUtCd0g" frameborder="0" width="560"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="landing-footer">
+                <div class="landing-footer-content">
+                    <div class="footer-top">
+                        <div class="grid">
+                            <div class="col-12">
+                                <p:graphicImage name="images/landing_logo_footer.png" library="apollo-layout" styleClass="footer-logo"/>
+                                <p>Apollo Premium Application Template</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h:outputStylesheet name="css/layout-#{guestPreferences.theme}.css" library="apollo-layout" />
+
+        <h:outputStylesheet name="css/primeicons.css" library="apollo-layout" />
+        <h:outputStylesheet name="css/primeflex.min.css" library="apollo-layout" />
+        
+        <script>
+            var $this = this;
+            this.landingNav = $('#landing-nav');
+            this.landingMenuButton = $('#landing-menubar-button');
+            
+            this.landingMenuButton.on('click', function(e) {
+                $this.toggleMenu();
+                e.preventDefault();
+            });
+                        
+            function toggleMenu() {
+                if(this.landingNav.hasClass('landing-mobile-menu'))
+                    this.landingNav.removeClass('landing-mobile-menu');
+                else
+                    $this.landingNav.addClass('landing-mobile-menu');
+            }
+            
+            /* Scroll Animate */
+            $('a[href*="#"]').click(function(event) {
+                $this.toggleMenu(); // When scrolling close the menu.
+                
+                var target = $(this.hash);
+                var top = target.length ? target.offset().top - 80 : 0;
+
+                $('html, body').animate({
+                    scrollTop: top
+                }, 500); 
+                
+                event.preventDefault();
+            });
+        </script>
+    </h:body>
+
+</html>

@@ -1,0 +1,60 @@
+.dashboard {
+    .knobs {
+        .ui-panel-content {
+            text-align: center;
+        }
+
+        .knob-title {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        div.col-12 {
+            position: relative;
+            overflow: hidden;
+
+            &:last-child {
+                border-right: 0 none;
+            }
+
+            i {
+                position: absolute;
+                font-size: 24px;
+                left: 50%;
+                top: 50%;
+                width: 36px;
+                height: 36px;
+                margin-left: -18px;
+                margin-top: -28px;
+                @include opacity(.7);
+            }
+            
+            &.knob-users {
+                color: $orange;
+            }
+
+            &.knob-mobile {
+                color: $green
+            }
+
+            &.knob-pageviews {
+                color: $red;
+            }
+
+            &.knob-sales {
+                color: $blue;
+            }
+        }
+    }
+
+    .ui-panel,.ui-datatable {
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    .chart {
+        overflow: auto;
+    }
+
+}

@@ -1,0 +1,82 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <div id="layout-config" class="layout-config">
+        <div class="layout-config-content">
+            <a href="#" id="layout-config-button" class="layout-config-button">
+                <i class="pi pi-cog"/>
+            </a>
+            <h:form id="config-form" styleClass="layout-config-form">
+                <div class="layout-config-header">
+                    <h3>Theme Customization</h3>
+                    <span>Poseidon offers different themes for layout, topbar, menu etc.</span>
+                </div>
+
+                <p:outputPanel id="menumodes-panel" styleClass="layout-config-section options">
+                    <span class="section-name">Menu Mode</span>
+                    <div class="grid layout-config-options">
+                        <p:selectOneRadio layout="responsive" columns="2" value="#{guestPreferences.layoutMode}"
+                                          onchange="PrimeFaces.ApolloConfigurator.changeMenuMode(event.target.value)" >
+                            <f:selectItem itemLabel="Static" itemValue="layout-static" />
+                            <f:selectItem itemLabel="Overlay" itemValue="layout-overlay" />
+                            <f:selectItem itemLabel="Horizontal" itemValue="layout-horizontal" />
+                            <f:selectItem itemLabel="Slim" itemValue="layout-slim" />
+                            <p:ajax update="menumodes-panel" />
+                        </p:selectOneRadio>
+                    </div>
+                </p:outputPanel>
+
+                <p:outputPanel id="lightdark-panel" styleClass="layout-config-section options">
+                    <span class="section-name">Layout Mode</span>
+                    <div class="grid layout-config-options">
+                        <p:selectOneRadio layout="responsive" columns="2" value="#{guestPreferences.darkMode}"
+                                          onchange="PrimeFaces.ApolloConfigurator.changeLayout('#{guestPreferences.color}', event.target.value)"   >
+                            <f:selectItem itemLabel="Light" itemValue="light" />
+                            <f:selectItem itemLabel="Dark" itemValue="dark" />
+                            <f:selectItem itemLabel="Dim" itemValue="dim" />
+                            <p:ajax onstart="PrimeFaces.ApolloConfigurator.beforeResourceChange()" update="config-form"/>
+                        </p:selectOneRadio>
+                    </div>
+                </p:outputPanel>
+
+                <p:outputPanel id="outlined-panel" styleClass="layout-config-section options">
+                    <span class="section-name">Form Type</span>
+                    <div class="grid layout-config-options">
+                        <p:selectOneRadio layout="responsive" columns="2" value="#{guestPreferences.inputStyle}"
+                        onchange="PrimeFaces.ApolloConfigurator.updateInputStyle(event.target.value)">
+                            <f:selectItem itemLabel="Outlined" itemValue="outlined" />
+                            <f:selectItem itemLabel="Filled" itemValue="filled" />
+                            <p:ajax />
+                        </p:selectOneRadio>
+                    </div>
+                </p:outputPanel>
+
+                <p:outputPanel id="themecolors-panel" styleClass="layout-config-section colors">
+                    <span class="section-name">Theme</span>
+                    <div class="grid layout-config-colors">
+                        <ui:repeat value="#{guestPreferences.layoutThemes}" var="layoutTheme">
+                            <div class="col col-fixed">
+                                <p:commandLink styleClass="layout-config-option" 
+                                    actionListener="#{guestPreferences.setColor(layoutTheme.file)}" process="@this"
+                                    update=":config-form:themecolors-panel :config-form:lightdark-panel logolink"
+                                    onstart="PrimeFaces.ApolloConfigurator.beforeResourceChange()"
+                                    oncomplete="PrimeFaces.ApolloConfigurator.changeComponentsTheme('#{layoutTheme.file}', '#{guestPreferences.darkMode}'), 
+                                    PrimeFaces.ApolloConfigurator.changeLayoutsTheme('#{layoutTheme.file}', '#{guestPreferences.darkMode}')">
+                                    <span class="layout-config-option-color" style="background-color: #{layoutTheme.color};" title="#{layoutTheme.name}"/>
+                                    <ui:fragment rendered="#{layoutTheme.file eq guestPreferences.color}">
+                                        <span class="layout-config-option-check-mask">
+                                            <i class="pi pi-check"/>
+                                        </span>
+                                    </ui:fragment>
+                                </p:commandLink>
+                            </div>
+                        </ui:repeat>
+                    </div>
+                </p:outputPanel>
+            </h:form>
+        </div>
+    </div>
+</ui:composition>

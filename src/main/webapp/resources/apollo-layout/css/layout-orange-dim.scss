@@ -1,0 +1,5 @@
+$primaryColor:scale-color(#f6a821, $lightness: 10%) !default;
+$primaryTextColor:#000000 !default;
+
+@import '../../sass/variables/layout/_layout_dim';
+@import '../../sass/layout/_layout.scss';
