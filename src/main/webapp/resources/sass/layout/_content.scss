@@ -1,0 +1,129 @@
+.layout-wrapper {
+    .layout-content {
+        .layout-breadcrumb {
+            background-color: $menuBgColor;
+            border-bottom: 1px solid $dividerColor;
+            min-height: 36px;
+            padding: 0px 20px;
+            padding-left: 22px;
+            @include border-box();
+            @include clearfix();
+            
+            .breadcrumb {
+                list-style: none;
+                color: $textSecondaryColor;
+                display: inline-block;
+
+                .route-bar-breadcrumb {
+                    list-style: none;
+                    @include flex();
+                    justify-content: space-around;
+                    align-items: center;
+                    padding: 0;
+
+                    li {
+                        display: inline-block; 
+                        vertical-align: middle;
+                        color: $textSecondaryColor;
+                        margin: 0 6px;    
+                        height: 36px;
+                        line-height: 36px;
+
+                        i {
+                            font-size: 16px;
+                            line-height: 36px;
+                        }
+                        
+                        a {
+                            color: $textSecondaryColor;
+                            font-size: 13px;
+                            &:hover {
+                                color: $primaryColor;
+                            }
+                        }
+                    }
+                }
+                
+                
+            }
+            
+            .layout-breadcrumb-options {
+                float: right;
+                padding: 0;
+                height: 100%;
+                
+                a {
+                    color: $textSecondaryColor;
+                    display: inline-block;
+                    width: 42px;
+                    height: 36px;
+                    font-size: 16px;
+                    line-height: 36px;
+                    text-align: center;
+                    @include transition(background-color $transitionDuration);
+                    
+                    &:hover {
+                        background-color: $primaryColor;
+                        color: $primaryTextColor;
+                    }
+                    
+                    i {
+                        line-height: inherit;
+                    }
+                }
+            }
+        }
+    }
+    
+    .layout-content {
+        .layout-content-container {
+            padding: 20px 20px;
+            flex: 1 1 auto;
+        }
+    }
+}
+
+@media (min-width: $tabletBreakpoint + 1) {
+    .layout-wrapper {        
+        &.layout-horizontal {
+            .layout-content {
+                padding-top: 90px;
+            }
+        }
+        
+        &.layout-overlay {
+            .layout-content {
+                padding-top: 50px;
+            }
+        }
+        
+        &.layout-static {
+            .layout-content {
+                padding-top: 50px;
+                margin-left: 230px;
+                @include transition(margin-left $transitionDuration);
+            }
+            
+            &.layout-static-inactive {
+                .layout-content {
+                    margin-left: 0;
+                }
+            }
+        }
+        
+        &.layout-slim {
+            .layout-content {
+                padding-top: 50px;
+                margin-left: 60px;
+            }
+        }
+    }
+}
+
+@media (max-width: $tabletBreakpoint) {
+    .layout-wrapper {
+        .layout-content {
+            padding: 50px 0px;
+        }
+    }
+}

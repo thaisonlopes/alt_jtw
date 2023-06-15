@@ -1,0 +1,567 @@
+.overview-box {
+    @include shadow(0 0px 6px 0px rgba(0, 0, 0, 0.12));
+    padding: 0px;
+    position: relative;
+    min-height: 100px;
+    overflow: hidden;
+    @include flex();
+    flex-direction: column;
+    @include flex-justify-between();
+    height: 100%;
+
+    .overview-top {
+        @include flex();
+        @include flex-justify-between();
+        padding:15px 15px 2px;
+
+        h6 {
+            color: #ffffff;
+            margin: 0;
+        }
+        
+        .overview-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+    
+        .overview-ratio {
+            color: #ffffff;
+    
+            .overview-direction {
+                display: inline-block;
+                text-align: center;
+                width: 20px;
+                height: 20px;
+                background-color: #ffffff;
+
+                .pi {
+                    vertical-align: middle;
+                }
+            }
+    
+            .overview-ratio-value {
+                display: inline-block;
+                margin-left: -4px;
+                height: 20px;
+                padding: 0 4px;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    &.blue {
+        background-image: linear-gradient(to bottom, #2C9BF0 1%, #2093E3 99%);
+
+        .overview-direction {
+            color: #39a3f4;
+        }
+
+        .overview-ratio-value {
+            background-color: #1164a3;
+            color: #39a3f4;
+        }
+    }
+
+    &.green {
+        background-image: linear-gradient(to bottom, #6EBA3B, #67B531);
+
+        .overview-direction {
+            color: #76be45;
+        }
+
+        .overview-ratio-value {
+            background-color: #447d1d;
+            color: #76be45;
+        }
+    }
+
+    &.orange {
+        background-image: linear-gradient(to bottom, #DA9B36, #D5942B);
+
+        .overview-direction {
+            color: #dea242;
+        }
+
+        .overview-ratio-value {
+            background-color: #90631d;
+            color: #dea242;
+        }
+    }
+
+    &.red {
+        background-image:linear-gradient(to bottom, #D06656, #CA5C4B);
+
+        .overview-direction {
+            color: #d67161;
+        }
+
+        .overview-ratio-value {
+            background-color: #943728;
+            color: #d67161;
+        }
+    }
+}
+
+.overview-box-nobg {
+    @include shadow(0 0px 6px 0px rgba(0, 0, 0, 0.12));
+    padding: 0px;
+    position: relative;
+    min-height: 100px;
+    overflow: hidden;
+    @include flex();
+    flex-direction: column;
+    @include flex-justify-between();
+    background: $cardBgColor;
+    height: 100%;
+
+    .overview-top {
+        @include flex();
+        @include flex-justify-between();
+        padding:15px 15px 2px;
+
+        h6 {
+            color: $textColor;
+            margin: 0;
+        }
+    
+    
+        .overview-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: $textColor;
+        }
+    
+        .overview-ratio {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            color: $textColor;
+    
+            .overview-direction {
+                display: inline-block;
+                text-align: center;
+                width: 20px;
+                height: 20px;
+            }
+    
+            .overview-ratio-value {
+                display: inline-block;
+                margin-left: -4px;
+                height: 20px;
+                padding: 0 4px;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+   
+}
+
+.timeline {
+    box-sizing: border-box;
+    margin-top: 0;
+
+    > .grid {
+        .col-3 {
+            font-size: 14px;
+            position: relative;
+            border-right: 1px solid $dividerColor;
+
+            i {
+                font-size: 24px;
+                position: absolute;
+                top: 12px;
+                right: -12px;
+                background-color: $cardBgColor;
+            }
+        }
+
+        .col-9 {
+            padding-left: 1.5em;
+            .event-owner {
+
+            }
+
+            .event-text {
+                color: $textSecondaryColor;
+                font-size: 14px;
+                display: block;
+                padding-bottom: 20px;
+            }
+
+            .event-content {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.task-list {
+    overflow: hidden;
+
+    .ui-panel {
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    .ui-panel-content {
+        padding: 0px !important;
+        min-height: 366px;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            padding: 12px 15px;
+            border-bottom: 1px solid $dividerColor;
+
+            &:last-child {
+                border-bottom: 0 none;
+            }
+        }
+
+        .ui-chkbox {
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        .task-name {
+            vertical-align: middle;
+        }
+
+        i {
+            color: $textSecondaryColor;
+            float: right;
+            font-size: 16px;
+        }
+    }
+}
+
+.user-card {
+    border:1px solid $dividerColor;
+    padding: 0;
+    margin: 0;
+    @include border-radius($borderRadius);
+
+    .user-card-header {
+        height: 100px;
+        overflow: hidden;
+        @include flex();
+        @include flex-align-center();
+        @include flex-justify-between();
+        padding: 20px;
+        background: $cardBgColor;
+
+        .ui-button {
+            width: 36px;
+            height: 36px;
+        }
+
+        .user-card-name {
+            @include flex();
+            @include flex-align-center();
+            img {
+                width: 60px;
+                margin-right: 12px;
+            }
+
+            font-size: 16px;
+            color: $textColor;
+            font-weight: 600;
+        }
+
+    }
+
+    .user-card-content {
+        background-color: transparent;
+        position: relative;
+
+        .user-detail {
+            text-align: left;
+
+            ul {
+               padding: 0px;
+               margin: 0;
+               list-style-type: none;
+
+                li {
+                    padding: 16px 24px;
+                    border-top: 1px solid $dividerColor;
+
+                    &:last-child {
+                        border-bottom: 1px solid $dividerColor;
+                    }
+
+                    i {
+                        font-size: 16px;
+                        margin-right: 8px;
+                        vertical-align: middle;
+                    }
+
+                    .project-title {
+                        font-weight: 600;
+                        margin-right: 8px;
+                        vertical-align: middle;
+                    }
+
+                    .project-detail {
+                        color: $textSecondaryColor;
+                        vertical-align: middle;
+                    }
+
+                    .project-progressbar {
+                        display: inline-block;
+                        width: 100px;
+                        background-color: $dividerColor;
+                        float: right;
+                        margin-top: 12px;
+                        vertical-align: middle;
+
+                        .project-progressbar-value {
+                            @include border-radius($borderRadius);
+                            background-color: $primaryColor;
+                            height: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-form {
+    overflow: hidden;
+
+    .ui-panel {
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    .ui-panel {
+        .ui-panel-content {
+            min-height: 366px;
+        }
+    }
+
+    .col-12 {
+        padding: 10px 15px;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+}
+
+.contacts {
+    overflow: hidden;
+
+    .ui-panel {
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    .ui-panel {
+        .ui-panel-content {
+            min-height: 366px;
+            padding: 0px !important;
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            border-bottom: 1px solid $dividerColor;
+            padding: 14px 15px;
+            width: 100%;
+            box-sizing: border-box;
+            text-decoration: none;
+            position: relative;
+            display: block;
+            @include border-radius(2px);
+            @include transition(background-color .2s);
+
+            img {
+                float: left;
+                margin-right: 8px;
+            }
+
+            .contact-info {
+                float: left;
+
+                .name {
+                    display: block;
+                    margin-top: 4px;
+                    font-size: 14px;
+                }
+
+                .location {
+                    margin-top: 4px;
+                    display: block;
+                    font-size: 12px;
+                    color: $textSecondaryColor;
+                }
+            }
+
+            .contact-actions {
+                float: right;
+                padding-top: 6px;
+
+                button:last-child {
+                    margin-left: 6px;
+                }
+            }
+
+            &:last-child {
+                border: 0;
+            }
+        }
+    }
+}
+
+.chat {
+    .ui-panel {
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.12);
+    }
+    .ui-panel-content {
+        padding: 0 !important;
+    }
+
+    .sales-panel {
+        margin-top: 15px;
+    }
+
+    ul {
+        padding: 12px;
+        margin: 0;
+        list-style-type: none;
+
+        li {
+            padding: 6px 0;
+            border-radius: 2px;
+
+            img {
+                width: 36px;
+                float: left;
+            }
+
+            span {
+                padding: 6px 12px;
+                float: left;
+                display: inline-block;
+                margin: 4px 0;
+                @include border-radius($borderRadius);
+            }
+
+            &.message-from {
+
+
+                img, span {
+                    float: left;
+                }
+
+                img {
+                    margin-right: 8px;
+                }
+
+                span {
+                    background-color: $primaryColor;
+                    color: $primaryTextColor;
+                }
+            }
+
+            &.message-own {
+                img, span {
+                    float: right;
+                }
+
+                img {
+                    margin-left: 8px;
+                }
+
+                span {
+                    background-color: darken($bodyBgColor,6%);
+                    color: $textColor;
+                }
+            }
+        }
+    }
+
+    .new-message {
+        height: 40px;
+        border-top: 1px solid $dividerColor;
+        color: #afafc0;
+
+        .message-attachment {
+            display: inline-block;
+            border-right: 1px solid $dividerColor;
+            width: 40px;
+            line-height: 40px;
+            height: 100%;
+            text-align: center;
+
+            i {
+                line-height: inherit;
+                font-size: 24px;
+            }
+        }
+
+        .message-input {
+            position: relative;
+            top: -4px;
+            width: calc(100% - 100px);
+            display: inline-block;
+
+            input {
+                border: 0 none;
+                font-size: 14px;
+                width: 100%;
+                background-color: transparent;
+                outline: 0 none;
+                padding-left: 8px;
+                @include no-shadow();
+            }
+        }
+    }
+}
+
+.disk-spaces {
+    .ui-panel {
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.12);
+    }
+    .ui-panel-content {
+        padding: 2em;
+
+        span {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .ui-progressbar {
+            margin-bottom: 40px;
+            height: 5px;
+        }
+    }
+}
