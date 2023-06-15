@@ -219,7 +219,143 @@
                 </p:panel>
             </div>
 
-            
+            <div class="col-12 md:col-6 lg:col-4 task-list">
+                <p:panel header="Tasks">
+                    <ul>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Sales Reports</span>
+                            <i class="pi pi-briefcase"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Pay Invoices</span>
+                            <i class="pi pi-money-bill"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Dinner with Tony</span>
+                            <i class="pi pi-users"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Client Meeting</span>
+                            <i class="pi pi-user"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">New Theme</span>
+                            <i class="pi pi-palette"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Flight Ticket</span>
+                            <i class="pi pi-ticket"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Generate Charts</span>
+                            <i class="pi pi-chart-bar"/>
+                        </li>
+                        <li>
+                            <p:selectBooleanCheckbox />
+                            <span class="task-name">Call Client</span>
+                            <i class="pi pi-mobile"/>
+                        </li>
+                    </ul>
+                </p:panel>
+            </div>
+            <div class="col-12 md:col-6 lg:col-4 ui-fluid contact-form">
+                <p:panel header="Message">
+                    <div class="grid">
+                        <div class="col-12">
+                            <p:selectOneMenu id="console" value="#{selectOneMenuView.console}" autoWidth="false">
+                                <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItem itemLabel="Sales" itemValue="Sales" />
+                                <f:selectItem itemLabel="Support" itemValue="Support" />
+                                <f:selectItem itemLabel="Finance" itemValue="Finance" />
+                            </p:selectOneMenu>
+                        </div>
+                        <div class="col-12">
+                            <p:inputText placeholder="Name"/>
+                        </div>
+                        <div class="col-12">
+                            <p:inputText placeholder="Email"/>
+                        </div>
+                        <div class="col-12">
+                            <p:inputText placeholder="Location"/>
+                        </div>
+                        <div class="col-12">
+                            <p:inputTextarea placeholder="Message" cols="5" autoResize="false"/>
+                        </div>
+                        <div class="col-12">
+                            <p:commandButton type="button" value="Send" icon="pi pi-arrow-right"/>
+                        </div>
+                    </div>
+                </p:panel>
+            </div>
+            <div class="col-12 lg:col-4 contacts">
+                <p:panel header="Contacts">
+                    <ul>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar.png" library="apollo-layout" width="45"/>
+                            <div class="contact-info">
+                                <span class="name">Sarah Miller (me)</span>
+                                <span class="location">sarah@alt.tec.br</span>
+                            </div>
+                            <div class="contact-actions">
+                                <p:commandButton type="button" icon="pi pi-arrow-right" styleClass="ui-button-info"/>
+                                <p:commandButton type="button" icon="pi pi-mobile" styleClass="ui-button-success"/>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar1.png" library="apollo-layout" width="45"/>
+                            <div class="contact-info">
+                                <span class="name">Joshua Williams</span>
+                                <span class="location">joshua@alt.tec.br</span>
+                            </div>
+                            <div class="contact-actions">
+                                <p:commandButton type="button" icon="pi pi-arrow-right" styleClass="ui-button-info"/>
+                                <p:commandButton type="button" icon="pi pi-mobile" styleClass="ui-button-success"/>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar2.png" library="apollo-layout" width="45"/>
+                            <div class="contact-info">
+                                <span class="name">Emily Clark</span>
+                                <span class="location">emily@alt.tec.br</span>
+                            </div>
+                            <div class="contact-actions">
+                                <p:commandButton type="button" icon="pi pi-arrow-right" styleClass="ui-button-info"/>
+                                <p:commandButton type="button" icon="pi pi-mobile" styleClass="ui-button-success"/>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar3.png" library="apollo-layout" width="45"/>
+                            <div class="contact-info">
+                                <span class="name">Tim Johnson</span>
+                                <span class="location">tim@alt.tec.br</span>
+                            </div>
+                            <div class="contact-actions">
+                                <p:commandButton type="button" icon="pi pi-arrow-right" styleClass="ui-button-info"/>
+                                <p:commandButton type="button" icon="pi pi-mobile" styleClass="ui-button-success"/>
+                            </div>
+                        </li>
+                        <li class="clearfix">
+                            <p:graphicImage name="images/avatar4.png" library="apollo-layout" width="45"/>
+                            <div class="contact-info">
+                                <span class="name">David Stark</span>
+                                <span class="location">kelly@alt.tec.br</span>
+                            </div>
+                            <div class="contact-actions">
+                                <p:commandButton type="button" icon="pi pi-arrow-right" styleClass="ui-button-info"/>
+                                <p:commandButton type="button" icon="pi pi-mobile" styleClass="ui-button-success"/>
+                            </div>
+                        </li>
+                    </ul>
+                </p:panel>
+            </div>
+
             <div class="col-12 lg:col-8 ">
                 <div class="grid">
                     <div class="col-12">
@@ -331,17 +467,61 @@
                 </div>
             </div>
 
-           <div class="col-12 md:col-8">
-                <div class="card">
-                    <h:form>
-                        <p:schedule id="schedule" value="#{calendarDemoView.eventModel}" widgetVar="myschedule" >
-                            <p:ajax event="dateSelect" listener="#{calendarDemoView.onDateSelect}" />
-                            <p:ajax event="eventSelect" listener="#{calendarDemoView.onEventSelect}"  />
-                            <p:ajax event="eventMove" listener="#{calendarDemoView.onEventMove}" />
-                            <p:ajax event="eventResize" listener="#{calendarDemoView.onEventResize}" />
-                        </p:schedule>
-                    </h:form>
-                </div>
+            <div class="col-12 md:col-7 chat">
+                <p:panel header="Chat">
+                    <ul>
+                        <li class="clearfix message-from">
+                            <p:graphicImage name="images/avatar2.png" library="apollo-layout" />
+                            <span>Retro occupy organic, stumptown shabby chic pour-over roof party DIY normcore.</span>
+                        </li>
+                        <li class="clearfix message-own">
+                            <p:graphicImage name="images/avatar.png" library="apollo-layout" />
+                            <span>Actually artisan organic occupy, Wes Anderson ugh whatever pour-over gastropub selvage.</span>
+                        </li>
+                        <li class="clearfix message-from">
+                            <p:graphicImage name="images/avatar2.png" library="apollo-layout" />
+                            <span>Chillwave craft beer tote bag stumptown quinoa hashtag.</span>
+                        </li>
+                        <li class="clearfix message-own">
+                            <p:graphicImage name="images/avatar.png" library="apollo-layout" />
+                            <span>Dreamcatcher locavore iPhone chillwave, occupy trust fund slow-carb distillery art party narwhal.</span>
+                        </li>
+                        <li class="clearfix message-own">
+                            <span>Sed ut perspiciatis unde omnis iste natus.</span>
+                        </li>
+                        <li class="clearfix message-from">
+                            <p:graphicImage name="images/avatar2.png" library="apollo-layout" />
+                            <span>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse.</span>
+                        </li>
+                        <li class="clearfix message-own">
+                            <p:graphicImage name="images/avatar.png" library="apollo-layout" />
+                            <span>At vero eos et accusamus.</span>
+                        </li>
+                    </ul>
+                    <div class="new-message">
+                        <div class="message-attachment">
+                            <i class="pi pi-paperclip" />
+                        </div>
+                        <div class="message-input">
+                            <input type="text" placeholder="Write a message" class="ui-inputfield" />
+                        </div>
+                    </div>
+                </p:panel>
+            </div>
+            <div class="col-12 md:col-5">
+                <p:panel header="Disk Spaces" styleClass="disk-spaces">
+                    <span>4.2 TB Used</span>
+                    <p:progressBar value="75" widgetVar="pb1"/>
+
+                    <span>2.9 TB Used</span>
+                    <p:progressBar value="45" widgetVar="pb2" />
+
+                    <span>5.9 TB Used</span>
+                    <p:progressBar value="85" widgetVar="pb3" />
+
+                    <span>1.9 TB Used</span>
+                    <p:progressBar value="25" widgetVar="pb4" />
+                </p:panel>
             </div>
 
             <div class="col-12 lg:col-4">
@@ -408,10 +588,25 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="col-12">
+                        <p:panel header="Map">
+                            <p:graphicImage name="images/dashboard/location.jpg" library="apollo-layout" style="width: 100%;"/>
+                        </p:panel>
+                    </div>
                 </div>
             </div>
-            
+            <div class="col-12 md:col-8">
+                <div class="card">
+                    <h:form>
+                        <p:schedule id="schedule" value="#{calendarDemoView.eventModel}" widgetVar="myschedule" >
+                            <p:ajax event="dateSelect" listener="#{calendarDemoView.onDateSelect}" />
+                            <p:ajax event="eventSelect" listener="#{calendarDemoView.onEventSelect}"  />
+                            <p:ajax event="eventMove" listener="#{calendarDemoView.onEventMove}" />
+                            <p:ajax event="eventResize" listener="#{calendarDemoView.onEventResize}" />
+                        </p:schedule>
+                    </h:form>
+                </div>
+            </div>
         </div>
     </ui:define>
 
