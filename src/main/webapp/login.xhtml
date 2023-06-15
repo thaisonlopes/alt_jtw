@@ -1,60 +1,70 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
-    <h:head>
-        <f:facet name="first">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-            <meta name="apple-mobile-web-app-capable" content="yes" />
-        </f:facet>
-        <title>PrimeFaces Apollo</title>
-    </h:head>
+<h:head>
+	<f:facet name="first">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+	</f:facet>
+	<title>PrimeFaces Apollo</title>
+</h:head>
 
-    <h:body styleClass="login-body">
-        <div class="body-container">
-            <div class="grid grid-nogutter">
-                <div class="col-12 lg:col-6 left-side">
-                    <p:graphicImage name="#{guestPreferences.darkMode != 'light'? 'images/alt_logo_transparente.png' : 'images/alt_logo_transparente.png'}" library="apollo-layout" />
-                    <h1>Seja Bem Vindo!!</h1>
-                    <p>
-                       Faça o login para iniciar sua sessão!
-                    </p>
-                </div>
-                <div class="col-12 lg:col-6 right-side">
-                    <div class="login-wrapper">
-                        <div class="login-container">
-                            <span class="title">Login</span>
+<h:body styleClass="login-body">
+	<div class="body-container">
+		<div class="grid grid-nogutter">
+			<div class="col-12 lg:col-6 left-side">
+				<p:graphicImage
+					name="#{guestPreferences.darkMode != 'light'? 'images/alt_logo_transparente.png' : 'images/alt_logo_transparente.png'}"
+					library="apollo-layout" />
+				<h1>Seja Bem Vindo!!</h1>
+				<p>Faça o login para iniciar sua sessão!</p>
+			</div>
+			<div class="col-12 lg:col-6 right-side">
+				<div class="login-wrapper">
+					<div class="login-container">
+						<span class="title">Login</span>
 
-                            <div class="grid ui-fluid">
-                            <div class="col-12">
-                                    <p:inputMask placeholder="CNPJ" mask="999.999.999/9999-99" autocomplete="off" />
-                                </div>
-                                <div class="col-12">
-                                    <p:inputText placeholder="Username" autocomplete="off" />
-                                </div>
-                                <div class="col-12">
-                                    <p:password placeholder="Password" autocomplete="off" feedback="false"/>
-                                </div>
-                                <div class="col-6">
-                                    <p:button outcome="dashboard" value="Login" icon="pi pi-check" />
-                                </div>
-                                <div class="col-6 password-container">
-                                    <p:link>Esqueceu sua senha?</p:link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <h:outputStylesheet name="css/primeicons.css" library="apollo-layout" />
-        <h:outputStylesheet name="css/primeflex.min.css" library="apollo-layout" />
-        <h:outputStylesheet name="css/layout-#{guestPreferences.theme}.css" library="apollo-layout" />
-    </h:body>
+						<div class="grid ui-fluid">
+							<div class="col-12">
+								<p:inputMask placeholder="CNPJ" mask="999.999.999/9999-99"
+									autocomplete="off" />
+							</div>
+							<div class="col-12">
+								<span class="ui-input-icon-left"> <i class="pi pi-user"></i>
+									<p:inputText placeholder="Username" />
+								</span>
+							</div>
+							<div class="col-12">
+								<span class="ui-input-icon-left"> <i class="pi pi-key"></i>
+									<p:password placeholder="Password" autocomplete="off"
+										feedback="false" />
+								</span>
+							</div>
+
+							<div class="col-6">
+								<p:button outcome="dashboard" value="Login" icon="pi pi-check" />
+							</div>
+							<div class="col-6 password-container">
+								<p:link>Esqueceu sua senha?</p:link>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h:outputStylesheet name="css/primeicons.css" library="apollo-layout" />
+	<h:outputStylesheet name="css/primeflex.min.css"
+		library="apollo-layout" />
+	<h:outputStylesheet name="css/layout-#{guestPreferences.theme}.css"
+		library="apollo-layout" />
+</h:body>
 
 </html>
