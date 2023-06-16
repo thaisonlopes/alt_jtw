@@ -39,9 +39,9 @@
 								</p:commandButton>
 							</p:toolbarGroup>
 							<p:toolbarGroup align="right">
-								<p:fileUpload mode="simple" skinSimple="true" label="Import"
+								<p:fileUpload mode="simple" skinSimple="true" label="Importar"
 									chooseIcon="pi pi-download" />
-								<p:commandButton value="Export" icon="pi pi-upload"
+								<p:commandButton value="Exportar" icon="pi pi-upload"
 									styleClass="ui-button-help" ajax="false">
 									<p:dataExporter type="pdf" target="dt-products"
 										fileName="products" />
@@ -49,7 +49,93 @@
 							</p:toolbarGroup>
 						</p:toolbar>
 
+				<p:dataTable id="dt-products" widgetVar="dtProducts" var="product" value="#{crudDemoView.products}" reflow="true" styleClass="products-table"
+                                     selection="#{crudDemoView.selectedProducts}" rowKey="#{product.id}" paginator="true" rows="10" rowSelectMode="add" paginatorPosition="bottom">
+                            <f:facet name="header">
+                                <div class="products-table-header">
+                                    <span style="font-weight: bold">Produtos Cadastrados</span>
 
+                                    <span class="filter-container ui-input-icon-left">
+                                        <i class="pi pi-search"></i>
+                                        <p:inputText id="globalFilter" onkeyup="PF('dtProducts').filter()" placeholder="Procurar" />
+                                    </span>
+                                </div>
+                            </f:facet>
+
+                            <p:ajax event="rowToggle" listener="#{crudDemoView.onRowToggle}" />
+                            <p:ajax event="rowSelect" update=":form:delete-products-button" />
+                            <p:ajax event="rowUnselect" update=":form:delete-products-button" />
+                            <p:ajax event="rowSelectCheckbox" update=":form:delete-products-button" />
+                            <p:ajax event="rowUnselectCheckbox" update=":form:delete-products-button" />
+                            <p:ajax event="toggleSelect" update=":form:delete-products-button" />
+
+                            <p:column selectionMode="multiple" exportable="false"></p:column>
+                            <p:column exportable="false">
+                                <p:rowToggler />
+                            </p:column>
+                            <p:column headerText="Código" sortBy="#{product.code}" filterBy="#{product.code}">
+                                <h:outputText value="#{product.code}" />
+                            </p:column>
+                            <p:column headerText="Nome" sortBy="#{product.name}" filterBy="#{product.name}">
+                                <h:outputText value="#{product.name}" />
+                            </p:column>
+                            <p:column headerText="Preço" sortBy="#{product.price}">
+                                <h:outputText value="#{product.price}" style="font-weight: 700">
+                                    <f:convertNumber currencySymbol="$" type="currency" />
+                                </h:outputText>
+                            </p:column>
+                            <p:column headerText="Categoria" sortBy="#{product.category}" filterBy="#{product.category}">
+                                <h:outputText value="#{product.category}" />
+                            </p:column>
+                            <p:column headerText="Quantidade" sortBy="#{product.rating}" >
+                                <h:outputText value="#{product.rating}"/>
+                            </p:column>
+                            <p:column headerText="Status" sortBy="#{product.inventoryStatus}" filterBy="#{product.inventoryStatus}">
+                                <h:outputText styleClass="product-badge status-#{product.inventoryStatus.name().toLowerCase()}" value="#{product.inventoryStatus.text}" />
+                            </p:column>
+                            <p:column exportable="false">
+                                <p:commandButton icon="pi pi-pencil" update=":form:manage-product-content" oncomplete="PF('manageProductDialog').show()"
+                                                 styleClass="edit-button rounded-button ui-button-success" process="@this">
+                                    <f:setPropertyActionListener value="#{product}" target="#{crudDemoView.selectedProduct}" />
+                                </p:commandButton>
+                                <p:commandButton class="ui-button-warning rounded-button" icon="pi pi-trash" process="@this" oncomplete="PF('deleteProductDialog').show()" >
+                                    <f:setPropertyActionListener value="#{product}" target="#{crudDemoView.selectedProduct}" />
+                                </p:commandButton>
+                            </p:column>
+
+                            <p:rowExpansion>
+                                <div class="orders-subtable">
+                                    <h5>Orders for #{product.name}</h5>
+                                    <p:dataTable var="order" value="#{product.orders}" reflow="true">
+                                        <p:column headerText="Id" sortBy="#{order.id}">
+                                            <h:outputText value="#{order.id}" />
+                                        </p:column>
+
+                                        <p:column headerText="Customer" sortBy="#{order.customer}">
+                                            <h:outputText value="#{order.customer}" />
+                                        </p:column>
+
+                                        <p:column headerText="Date" sortBy="#{order.date}">
+                                            <h:outputText value="#{order.date}" />
+                                        </p:column>
+
+                                        <p:column headerText="Amount" sortBy="#{order.amount}">
+                                            <h:outputText value="#{order.amount}">
+                                                <f:convertNumber currencySymbol="$" type="currency" />
+                                            </h:outputText>
+                                        </p:column>
+
+                                        <p:column headerText="Status" sortBy="#{order.status}">
+                                            <span class="order-badge order-#{order.status.name().toLowerCase()}">#{order.status}</span>
+                                        </p:column>
+
+                                        <p:column style="width: 3.5rem">
+                                            <p:commandButton icon="pi pi-search" />
+                                        </p:column>
+                                    </p:dataTable>
+                                </div>
+                            </p:rowExpansion>
+                        </p:dataTable>
 
 						<p:dialog header="Cadastro De Produtos" showEffect="fade"
 							modal="true" widgetVar="manageProductDialog" responsive="true"
