@@ -77,15 +77,14 @@
 
 							<p:column selectionMode="multiple" exportable="false"></p:column>
 							<p:column exportable="false">
-								<p:rowToggler />
 							</p:column>
-							<p:column headerText="Código" sortBy="#{product.code}"
-								filterBy="#{product.code}">
-								<h:outputText value="#{product.code}" />
+							<p:column headerText="Código" sortBy="#{product.id}"
+								filterBy="#{product.id}">
+								<h:outputText value="#{product.id}" />
 							</p:column>
-							<p:column headerText="Categoria" sortBy="#{product.name}"
-								filterBy="#{product.name}">
-								<h:outputText value="#{product.name}" />
+							<p:column headerText="Categoria" sortBy="#{product.category}"
+								filterBy="#{product.category}">
+								<h:outputText value="#{product.category}" />
 							</p:column>
 							
 							<p:column exportable="false">
@@ -118,7 +117,7 @@
 											<div class="field">
 												<p:outputLabel for="name">Código</p:outputLabel>
 												<p:inputText id="name"
-													value="#{crudDemoView.selectedProduct.name}"
+													value="#{crudDemoView.selectedProduct.id}"
 													required="true" disabled="true" />
 											</div>
 										</div>
@@ -126,7 +125,7 @@
 											<div class="field">
 												<p:outputLabel for="name">Descrição</p:outputLabel>
 												<p:inputText id="codigoDeBarra"
-													value="#{crudDemoView.selectedProduct.name}"
+													value="#{crudDemoView.selectedProduct.category}"
 													required="false" />
 											</div>
 										</div>
