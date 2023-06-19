@@ -13,6 +13,7 @@
 		</li>
 	</ui:define>
 
+
 	<ui:define name="content">
 		<h:form id="form">
 			<div class="grid crud-demo">
@@ -66,6 +67,22 @@
 										</div>
 										<div class="col-12 md:col-2">
 											<div class="field">
+												<p:outputLabel for="@next" styleClass="block"
+													value="Data Cadastro" />
+												<p:datePicker showIcon="true" required="true"
+													disabled="true" />
+											</div>
+										</div>
+										<div class="col-12 md:col-4">
+											<div class="field">
+												<p:outputLabel for="codPessoa">Nome Completo</p:outputLabel>
+												<p:inputText id="nomePessoa"
+													value="#{crudDemoView.selectedProduct.name}"
+													required="true" />
+											</div>
+										</div>
+										<div class="col-12 md:col-2">
+											<div class="field">
 												<div class="formgrid grid">
 													<div class="field col">
 														<p:outputLabel for="codPessoa">Tipo Pessoa</p:outputLabel>
@@ -78,17 +95,9 @@
 												</div>
 											</div>
 										</div>
-										<div class="col-12 md:col-6">
-											<div class="field">
-												<p:outputLabel for="codPessoa">Nome Completo</p:outputLabel>
-												<p:inputText id="nomePessoa"
-													value="#{crudDemoView.selectedProduct.name}"
-													required="true"/>
-											</div>
-										</div>
 										<div class="col-12 md:col-2">
 											<div class="field">
-											<p:outputLabel for="codPessoa">CPF</p:outputLabel>
+												<p:outputLabel for="codPessoa">CPF</p:outputLabel>
 												<span class="ui-input-icon-left"> <i
 													class="pi pi-check"></i> <p:inputMask placeholder="CPF"
 														mask="999.999.999-999" autocomplete="off" />
@@ -96,57 +105,153 @@
 											</div>
 										</div>
 									</div>
-									<div class="field">
-										<p:outputLabel for="description">Description</p:outputLabel>
-										<p:inputTextarea id="description"
-											value="#{crudDemoView.selectedProduct.description}" />
-									</div>
-									<div class="field">
-										<p:outputLabel for="category">Category</p:outputLabel>
-										<p:selectOneRadio id="category"
-											value="#{crudDemoView.selectedProduct.category}"
-											layout="responsive" columns="2">
-											<f:selectItem itemLabel="Accessories" itemValue="Accessories" />
-											<f:selectItem itemLabel="Clothing" itemValue="Clothing" />
-											<f:selectItem itemLabel="Electronics" itemValue="Electronics" />
-											<f:selectItem itemLabel="Fitness" itemValue="Fitness" />
-										</p:selectOneRadio>
-									</div>
-									<div class="formgrid grid">
-										<div class="field col">
-											<p:outputLabel for="price">Preço</p:outputLabel>
-											<p:inputNumber id="price"
-												value="#{crudDemoView.selectedProduct.price}" symbol=" USD"
-												symbolPosition="s" decimalSeparator="."
-												thousandSeparator="," />
+									<div class="card">
+										<h5>Endereço Principal</h5>
+										<div class="grid ui-fluid mt-3">
+											<div class="col-12 md:col-2">
+												<div class="field">
+													<div class="formgrid grid">
+														<div class="field col">
+															<p:outputLabel for="logradouro">Tipo Logradouro</p:outputLabel>
+															<p:selectOneMenu>
+																<f:selectItem itemLabel="" itemValue="-1" />
+																<f:selectItem itemLabel="Rua" itemValue="1" />
+																<f:selectItem itemLabel="Avenida" itemValue="2" />
+																<f:selectItem itemLabel="Comunidade" itemValue="2" />
+															</p:selectOneMenu>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-12 md:col-4">
+												<div class="field">
+													<p:outputLabel for="logradouro">Logradouro</p:outputLabel>
+													<span class="ui-input-icon-left"> <i
+														class="pi pi-map"></i> <p:inputText id="logradouro"
+															value="#{crudDemoView.selectedProduct.name}"
+															required="true" />
+													</span>
+												</div>
+											</div>
+											<div class="col-12 md:col-1">
+												<div class="field">
+													<p:outputLabel for="numero">Número</p:outputLabel>
+													<p:inputText id="numero"
+														value="#{crudDemoView.selectedProduct.name}"
+														required="true" />
+												</div>
+											</div>
+											<div class="col-12 md:col-3">
+												<div class="field">
+													<p:outputLabel for="bairro">Bairro</p:outputLabel>
+													<p:inputText id="bairro"
+														value="#{crudDemoView.selectedProduct.name}"
+														required="true" />
+												</div>
+											</div>
+											<div class="col-12 md:col-2">
+												<div class="field">
+													<p:outputLabel for="complemento">Complemento</p:outputLabel>
+													<p:inputText id="complemento"
+														value="#{crudDemoView.selectedProduct.name}"
+														required="true" />
+												</div>
+											</div>
+											<div class="col-12 md:col-2">
+												<div class="field">
+													<p:outputLabel for="cidade">CEP</p:outputLabel>
+													<div class="ui-inputgroup">
+														<span class="ui-inputgroup-addon"> <i
+															class="pi pi-map-marker" />
+														</span> <span class="ui-float-label" style="width: 100%">
+															<p:outputLabel for="cep"></p:outputLabel> <p:inputMask
+																id="cep" value="#{crudDemoView.selectedProduct.name}"
+																mask="99.999-999" />
+														</span>
+													</div>
+												</div>
+											</div>
+											
+											<div class="col-12 md:col-2">
+												<div class="field">
+													<p:outputLabel for="cidade">Cidade</p:outputLabel>
+													<p:inputText id="cidade"
+														value="#{crudDemoView.selectedProduct.name}"
+														required="true" />
+												</div>
+											</div>
+											<div class="col-12 md:col-1">
+												<div class="field">
+													<p:outputLabel for="cidade">Estado</p:outputLabel>
+													<div class="ui-inputgroup">
+														<span class="ui-inputgroup-addon"> <i
+															class="pi pi-map-marker" />
+														</span> <span class="ui-float-label" style="width: 100%">
+															<p:selectOneMenu>
+																<f:selectItem itemLabel="" itemValue="-1" />
+																<f:selectItem itemLabel="MG" itemValue="1" />
+																<f:selectItem itemLabel="RJ" itemValue="2" />
+																<f:selectItem itemLabel="SP" itemValue="2" />
+															</p:selectOneMenu>
+														</span>
+													</div>
+												</div>
+											</div>
+
 										</div>
-										<div class="field col">
-											<p:outputLabel for="quantity">Quantidade</p:outputLabel>
-											<p:spinner id="quantity" min="0"
-												value="#{crudDemoView.selectedProduct.quantity}" />
+									</div>
+
+									<div class="card">
+										<H5>Contatos</H5>
+										<div class="grid ui-fluid mt-3">
+											<div class="col-12 md:col-2">
+												<p:outputLabel id="celular_whatsapp">Celular</p:outputLabel>
+												<span class="ui-input-icon-left"> <i
+													class="pi pi-whatsapp"></i> <p:inputMask
+														placeholder="WhatsApp" mask="(99) 9 9999-9999"
+														autocomplete="off" />
+												</span>
+											</div>
+											<div class="col-12 md:col-2">
+												<p:outputLabel id="celular_secundario">Celular Secundário</p:outputLabel>
+												<span class="ui-input-icon-left"> <i
+													class="pi pi-mobile"></i> <p:inputMask
+														placeholder="Contato Secundário" mask="(99) 9 9999-9999"
+														autocomplete="off" />
+												</span>
+											</div>
+											<div class="col-12 md:col-3">
+												<p:outputLabel id="email">E-mail</p:outputLabel>
+												<span class="ui-input-icon-left"> <i
+													class="pi pi-envelope"></i> <p:inputMask
+														placeholder="contato@email.com.br" />
+												</span>
+											</div>
+
 										</div>
 									</div>
 								</p:outputPanel>
 							</p:outputPanel>
 
+
 							<f:facet name="footer">
-								<p:commandButton value="Save" icon="pi pi-check"
+								<p:commandButton value="Salvar" icon="pi pi-check"
 									actionListener="#{crudDemoView.saveProduct}"
 									update="manage-product-content"
 									process="manage-product-content @this" />
-								<p:commandButton value="Cancel" icon="pi pi-times"
+								<p:commandButton value="Cancelar" icon="pi pi-times"
 									onclick="PF('manageProductDialog').hide()"
 									class="ui-button-secondary" />
 							</f:facet>
 						</p:dialog>
 
 						<p:confirmDialog widgetVar="deleteProductDialog" showEffect="fade"
-							width="300" message="Delete the product?" header="Confirm"
+							width="300" message="Delete a pessoa?" header="Confirm"
 							severity="warn">
-							<p:commandButton value="Yes" icon="pi pi-check"
+							<p:commandButton value="Sim" icon="pi pi-check"
 								actionListener="#{crudDemoView.deleteProduct}" process="@this"
 								oncomplete="PF('deleteProductDialog').hide()" />
-							<p:commandButton value="No" type="button"
+							<p:commandButton value="Não" type="button"
 								styleClass="ui-button-secondary" icon="pi pi-times"
 								onclick="PF('deleteProductDialog').hide()" />
 						</p:confirmDialog>
