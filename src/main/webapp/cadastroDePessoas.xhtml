@@ -57,7 +57,7 @@
 								<p:outputPanel
 									rendered="#{not empty crudDemoView.selectedProduct}">
 									<div class="grid ui-fluid mt-3">
-										<div class="col-12 md:col-2">
+										<div class="col-12 md:col-1">
 											<div class="field">
 												<p:outputLabel for="codPessoa">Código</p:outputLabel>
 												<p:inputText id="codPessoa"
@@ -73,12 +73,19 @@
 													disabled="true" />
 											</div>
 										</div>
-										<div class="col-12 md:col-4">
+										<div class="col-12 md:col-3">
 											<div class="field">
 												<p:outputLabel for="codPessoa">Nome Completo</p:outputLabel>
 												<p:inputText id="nomePessoa"
 													value="#{crudDemoView.selectedProduct.name}"
 													required="true" />
+											</div>
+										</div>
+										<div class="col-12 md:col-2">
+											<div class="field">
+												<p:outputLabel for="@next" styleClass="block"
+													value="Data Nascimento" />
+												<p:datePicker showIcon="true" required="true"/>
 											</div>
 										</div>
 										<div class="col-12 md:col-2">
@@ -205,18 +212,16 @@
 										<H5>Contatos</H5>
 										<div class="grid ui-fluid mt-3">
 											<div class="col-12 md:col-2">
-												<p:outputLabel id="celular_whatsapp">Celular</p:outputLabel>
+												<p:outputLabel id="celular_whatsapp">WhatsApp</p:outputLabel>
 												<span class="ui-input-icon-left"> <i
-													class="pi pi-whatsapp"></i> <p:inputMask
-														placeholder="WhatsApp" mask="(99) 9 9999-9999"
+													class="pi pi-whatsapp"></i> <p:inputMask mask="(99) 9 9999-9999"
 														autocomplete="off" />
 												</span>
 											</div>
 											<div class="col-12 md:col-2">
 												<p:outputLabel id="celular_secundario">Celular Secundário</p:outputLabel>
 												<span class="ui-input-icon-left"> <i
-													class="pi pi-mobile"></i> <p:inputMask
-														placeholder="Contato Secundário" mask="(99) 9 9999-9999"
+													class="pi pi-mobile"></i> <p:inputMask mask="(99) 9 9999-9999"
 														autocomplete="off" />
 												</span>
 											</div>
