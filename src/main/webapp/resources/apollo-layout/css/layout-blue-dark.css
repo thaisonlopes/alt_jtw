@@ -2828,6 +2828,15 @@ a {
   font-weight: 700;
 }
 
+#selectedProducts legend {
+	background-color: #1565c0;
+	color: #fff;
+	padding: 13px 13px;
+	border-radius: 10px;
+	box-shadow: 4px -4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
 @media print {
   body * {
     visibility: hidden;
