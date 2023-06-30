@@ -4,15 +4,25 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.Column;
+import jakarta.persistence.Table;
 
 @Entity
-public class Produto {
+@Table(name = "produto")
+public class Produto implements java.io.Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
 	private Long id;
-
+	@Column
 	private String nome;
+	@Column
 	private double preco;
 
 	public Long getId() {
