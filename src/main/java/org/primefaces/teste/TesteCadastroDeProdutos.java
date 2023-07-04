@@ -38,6 +38,7 @@ public class TesteCadastroDeProdutos {
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
 
+        
         // Persistir o produto
         em.persist(produto);
 
