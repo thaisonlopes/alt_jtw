@@ -6,7 +6,7 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import java.sql.Timestamp;
 
-import org.primefaces.apollo.entidades.cadastroProdutos.cadastroDeProdutos.CadastroDeProdutos;
+import org.primefaces.apollo.entidades.cadastroProdutos.cadastroDeProdutos.Produto;
 import org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.CategoriaProdutos;
 
 public class TesteCadastroDeProdutos {
@@ -16,7 +16,7 @@ public class TesteCadastroDeProdutos {
         EntityManager em = emf.createEntityManager();
 
         // Criar uma instância de CadastroDeProdutos
-        CadastroDeProdutos produto = new CadastroDeProdutos();
+        Produto produto = new Produto();
         produto.setDthr_create(new Timestamp(System.currentTimeMillis()));
         produto.setCod_usuario_create(1);
         produto.setDthr_update(new Timestamp(System.currentTimeMillis()));
