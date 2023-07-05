@@ -11,16 +11,16 @@
             <div class="layout-menu-title">MENU</div>
             <h:form id="menuform">
                 <pa:menu widgetVar="ApolloMenuWidget">
-                    <p:menuitem id="m_dashboard" value="Dashboard" icon="pi pi-fw pi-home" outcome="/dashboard" />
-                    <p:menuitem id="m_cadastroDePessoas" value="Cadastro De Pessoas" icon="pi pi-fw pi-id-card" outcome="/cadastroDePessoas" />
+                    <p:menuitem id="m_dashboard" value="Dashboard" icon="pi pi-fw pi-home" outcome="/dashboard.xhtml" />
+                    <p:menuitem id="m_cadastroDePessoas" value="Cadastro De Pessoas" icon="pi pi-fw pi-id-card" outcome="/alt/cadastroDePessoas/cadastroDePessoas.xhtml" />
                     <p:submenu id="sub_Produtos" label="Produtos" icon="pi pi-fw pi-pencil">
-                                <p:menuitem id="categoria" value="Categoria" icon="pi pi-fw pi-bars" outcome="/categorias" />
-                                <p:menuitem id="cadastroDeProdutos" value="Cadastro De Produtos" icon="pi pi-fw pi-tag" outcome="/cadastroDeProdutos" />
+                                <p:menuitem id="categoria" value="Categoria" icon="pi pi-fw pi-bars" outcome="/alt/cadastroProdutos/categoriaProdutos/categoriaProdutos.xhtml"/>
+                                <p:menuitem id="cadastroDeProdutos" value="Cadastro De Produtos" icon="pi pi-fw pi-tag" outcome="/alt/cadastroProdutos/cadastroDeProdutos/cadastroDeProdutos.xhtml" />
                     </p:submenu>
                     
                     
                     <p:submenu id="sub_vendas" label="Vendas" icon="pi pi-fw pi-shopping-bag">
-                                <p:menuitem id="nova_venda" value="Nova Venda" icon="pi pi-fw pi-plus" outcome="/vendas" />
+                                <p:menuitem id="nova_venda" value="Nova Venda" icon="pi pi-fw pi-plus" outcome="/alt/vendas/cadastroDeVendas/vendas.xhtml" />
                                 <p:menuitem id="relatorio_venda" value="Relatório De Vendas" icon="pi pi-fw pi-history" outcome="/charts" />
                     </p:submenu>
                     
@@ -55,7 +55,7 @@
                         <p:menuitem id="m_calendar" value="Calendário" icon="pi pi-fw pi-calendar-plus" outcome="/calendar" />
                         <p:menuitem id="m_chronoline" value="Chronoline" icon="pi pi-fw pi-calendar" outcome="/chronoline" />
                         <p:menuitem id="m_landing" value="Landing" icon="pi pi-fw pi-globe" outcome="/landing" />
-                        <p:menuitem id="m_login" value="Login" icon="pi pi-fw pi-sign-in" outcome="/login" />
+                        <p:menuitem id="m_login" value="Login" icon="pi pi-fw pi-sign-in" outcome="/alt/login/login.xhtml" />
                         <p:menuitem id="m_invoice" value="Invoice" icon="pi pi-fw pi-dollar" outcome="/invoice" />
                         <p:menuitem id="m_help" value="Help" icon="pi pi-fw pi-question-circle" outcome="/help" />
                         <p:menuitem id="m_error" value="Error" icon="pi pi-fw pi-exclamation-triangle" outcome="/error" />
