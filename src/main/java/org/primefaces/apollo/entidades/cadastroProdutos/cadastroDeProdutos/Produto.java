@@ -1,6 +1,5 @@
 package org.primefaces.apollo.entidades.cadastroProdutos.cadastroDeProdutos;
 
-import java.sql.Timestamp;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,6 +12,7 @@ import jakarta.validation.constraints.NotNull;
 import java.util.Objects;
 
 import org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.CategoriaProdutos;
+import org.primefaces.apollo.entidades.superClasse.EntityGeneric;
 
 /**
  * 
@@ -22,23 +22,11 @@ import org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.Catego
 
 @Entity
 @Table(name = "cadastro_produtos")
-public class Produto {
+public class Produto extends EntityGeneric {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_cadastro_produtos")
 	private long id_cadastro_produtos;
-
-	@Column(name = "dthr_create")
-	private Timestamp dthr_create;
-
-	@Column(name = "cod_usuario_create")
-	private int cod_usuario_create;
-
-	@Column(name = "dthr_update")
-	private Timestamp dthr_update;
-
-	@Column(name = "cod_usuario_update")
-	private int cod_usuario_update;
 
 	@NotNull
 	@Column(name = "codigo")
@@ -101,38 +89,6 @@ public class Produto {
 
 	public void setId_cadastro_produtos(long id_cadastro_produtos) {
 		this.id_cadastro_produtos = id_cadastro_produtos;
-	}
-
-	public Timestamp getDthr_create() {
-		return dthr_create;
-	}
-
-	public void setDthr_create(Timestamp dthr_create) {
-		this.dthr_create = dthr_create;
-	}
-
-	public int getCod_usuario_create() {
-		return cod_usuario_create;
-	}
-
-	public void setCod_usuario_create(int cod_usuario_create) {
-		this.cod_usuario_create = cod_usuario_create;
-	}
-
-	public Timestamp getDthr_update() {
-		return dthr_update;
-	}
-
-	public void setDthr_update(Timestamp dthr_update) {
-		this.dthr_update = dthr_update;
-	}
-
-	public int getCod_usuario_update() {
-		return cod_usuario_update;
-	}
-
-	public void setCod_usuario_update(int cod_usuario_update) {
-		this.cod_usuario_update = cod_usuario_update;
 	}
 
 	public long getCodigo() {
@@ -219,7 +175,7 @@ public class Produto {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id_cadastro_produtos, cod_usuario_create, codigo, nome_do_produto);
+		return Objects.hash(id_cadastro_produtos, codigo, nome_do_produto);
 	}
 
 	@Override
@@ -230,7 +186,7 @@ public class Produto {
 			return false;
 		Produto that = (Produto) o;
 		return id_cadastro_produtos == that.id_cadastro_produtos
-				&& Objects.equals(cod_usuario_create, that.cod_usuario_create) && codigo == that.codigo
+				&& codigo == that.codigo
 				&& Objects.equals(nome_do_produto, that.nome_do_produto);
 	}
 }

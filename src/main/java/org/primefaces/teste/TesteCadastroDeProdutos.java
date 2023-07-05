@@ -4,7 +4,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
-import java.sql.Timestamp;
 
 import org.primefaces.apollo.entidades.cadastroProdutos.cadastroDeProdutos.Produto;
 import org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.CategoriaProdutos;
@@ -17,9 +16,7 @@ public class TesteCadastroDeProdutos {
 
         // Criar uma instância de CadastroDeProdutos
         Produto produto = new Produto();
-        produto.setDthr_create(new Timestamp(System.currentTimeMillis()));
         produto.setCod_usuario_create(1);
-        produto.setDthr_update(new Timestamp(System.currentTimeMillis()));
         produto.setCod_usuario_update(1);
         produto.setCodigo(1);
         produto.setCod_barra("123456789");
@@ -27,7 +24,7 @@ public class TesteCadastroDeProdutos {
         produto.setQuantidade(10);
         produto.setModelo_marca("Marca A");
         // Definir a categoria de produtos
-        CategoriaProdutos categoria = em.find(CategoriaProdutos.class, 1L); 
+        CategoriaProdutos categoria = em.find(CategoriaProdutos.class, 1l); 
         produto.setId_categoria(categoria);
         produto.setUnidade("Unidade A");
         produto.setObservacao("Observação do produto");
