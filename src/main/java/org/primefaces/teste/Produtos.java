@@ -8,8 +8,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "produto")
-public class Produto implements java.io.Serializable {
+@Table(name = "produtos")
+public class Produtos implements java.io.Serializable {
 
 	/**
 	 * 

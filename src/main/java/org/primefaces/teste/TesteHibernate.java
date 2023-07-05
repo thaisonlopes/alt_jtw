@@ -13,15 +13,15 @@ public class TesteHibernate {
         EntityManager em = emf.createEntityManager();
         
         // Cria um objeto Produto
-        Produto produto = new Produto();
-        produto.setNome("Celular");
-        produto.setPreco(999.99);
+        Produtos produtos = new Produtos();
+        produtos.setNome("Celular");
+        produtos.setPreco(999.99);
         
         // Inicia uma transação
         em.getTransaction().begin();
         
         // Persiste o objeto no banco de dados
-        em.persist(produto);
+        em.persist(produtos);
         
         // Comita a transação
         em.getTransaction().commit();
@@ -30,6 +30,6 @@ public class TesteHibernate {
         em.close();
         emf.close();
         
-        System.out.println("Produto persistido: " + produto);
+        System.out.println("Produto persistido: " + produtos);
     }
 }

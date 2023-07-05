@@ -5,10 +5,9 @@
 
 	<persistence-unit name="ALT">
 
-
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
-		<class>org.primefaces.teste.Produto</class>
+		<class>org.primefaces.teste.Produtos</class>
 		<class>org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.CategoriaProdutos</class>
 		<class>org.primefaces.apollo.entidades.cadastroProdutos.cadastroDeProdutos.CadastroDeProdutos</class>
 			
