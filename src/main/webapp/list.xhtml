@@ -41,7 +41,7 @@
                                     <h:outputText value="#{product.price}" styleClass="product-price">
                                         <f:convertNumber currencySymbol="$" type="currency" />
                                     </h:outputText>
-                                    <p:commandButton type="button" icon="pi pi-shopping-cart" disabled="#{product.inventoryStatus == 'OUTOFSTOCK'}"/>
+                                    <p:commandButton type="button" icon="pi pi-shopping-cart" disabled="#{product.inventoryStatus == 'foraDeEstoque'}"/>
                                 </div>
                             </div>
                         </p:dataViewGridItem>
@@ -59,7 +59,7 @@
                                     <h:outputText value="#{product.price}" styleClass="product-price">
                                         <f:convertNumber currencySymbol="$" type="currency" />
                                     </h:outputText>
-                                    <p:commandButton type="button" icon="pi pi-shopping-cart" value="Add to Cart" disabled="#{product.inventoryStatus == 'OUTOFSTOCK'}"/>
+                                    <p:commandButton type="button" icon="pi pi-shopping-cart" value="Add to Cart" disabled="#{product.inventoryStatus == 'foraDeEstoque'}"/>
                                     <span class="product-badge status-#{product.inventoryStatus.name().toLowerCase()}">#{product.inventoryStatus.text}</span>
                                 </div>
                             </div>

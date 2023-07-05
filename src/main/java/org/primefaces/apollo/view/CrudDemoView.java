@@ -81,10 +81,10 @@ public class CrudDemoView implements Serializable {
         if (this.selectedProduct.getCode() == null) {
             this.selectedProduct.setCode(UUID.randomUUID().toString().replaceAll("-", "").substring(0, 9));
             this.products.add(this.selectedProduct);
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Product Added"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Produto Adicionado"));
         }
         else {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Product Updated"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Produto Alterado"));
         }
         
         PrimeFaces.current().executeScript("PF('manageProductDialog').hide()");
@@ -94,17 +94,17 @@ public class CrudDemoView implements Serializable {
     public void deleteProduct() {
         this.products.remove(this.selectedProduct);
         this.selectedProduct = null;
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Product Removed"));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Produto Removido"));
         PrimeFaces.current().ajax().update("form:messages", "form:dt-products");
     }
 
     public String getDeleteButtonMessage() {
         if (hasSelectedProducts()) {
             int size = this.selectedProducts.size();
-            return size > 1 ? size + " products selected" : "1 product selected";
+            return size > 1 ? size + " produtos selecionados" : "1 produto selecionado";
         }
 
-        return "Delete";
+        return "Excluído";
     }
 
     public boolean hasSelectedProducts() {
@@ -114,7 +114,7 @@ public class CrudDemoView implements Serializable {
     public void deleteSelectedProducts() {
         this.products.removeAll(this.selectedProducts);
         this.selectedProducts = null;
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Products Removed"));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Produtos Removidos"));
         PrimeFaces.current().ajax().update("form:messages", "form:dt-products");
     }
 

@@ -3,7 +3,7 @@
     xmlns:p="http://primefaces.org/ui" template="/WEB-INF/template.xhtml">
 
     <ui:define name="viewname">
-        <li>Pages</li>
+        <li>Home</li>
         <li>/</li>
         <li>
             <p:link outcome="/invoice">Invoice</p:link>
@@ -20,68 +20,68 @@
                         <div class="invoice">
                             <div class="invoice-header">
                                 <div class="invoice-company">
-                                    <p:graphicImage id="invoice-logo" styleClass="logo-image" name="images/#{guestPreferences.darkMode != 'light' ? 'logo-white.png' : 'logo-dark.png' }" library="apollo-layout" />
+                                    <p:graphicImage id="invoice-logo" styleClass="logo-image" name="images/#{guestPreferences.darkMode != 'light' ? 'alt_logo_transparente_light.png' : 'alt_logo_transparente_dark.png' }" library="apollo-layout" />
                                     <p:graphicImage id="printed-invoice-logo" styleClass="logo-image" name="images/logo-dark.png" library="apollo-layout" />
-                                    <div class="company-name">YOUR COMPANY</div>
-                                    <div>9137 3rd Lane California City</div> 
-                                    <div>CA 93504, U.S.A.</div>
+                                    <div class="company-name">ALT</div>
+                                    <div>Centro, Turmalina</div> 
+                                    <div>Minas Gerais, Brasil</div>
                                 </div>
                                 <div>
-                                    <div class="invoice-title">INVOICE</div>
+                                    <div class="invoice-title">Venda</div>
                                     <div class="invoice-details">
-                                        <div class="invoice-label">DATE</div>
+                                        <div class="invoice-label">Data</div>
                                         <div class="invoice-value">#{invoiceDemoView.today}</div>
 
-                                        <div class="invoice-label">INVOICE #</div>
+                                        <div class="invoice-label">Venda #</div>
                                         <div class="invoice-value">8523</div>
 
-                                        <div class="invoice-label">CUSTOMER ID</div>
-                                        <div class="invoice-value">C1613</div>
+                                        <div class="invoice-label">Cliente ID</div>
+                                        <div class="invoice-value">1613</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="invoice-to">
-                                <div class="bill-to">BILL TO</div>
+                                <div class="bill-to">Nome Do Cliente</div>
                                 <div class="invoice-to-info">
-                                    <div>Claire Williams, 148 Hope Lane</div>
-                                    <div>Palo Alto, CA 94304. </div>
+                                    <div>Rua Rio De Janeiro, 15 - Progresso</div>
+                                    <div>Turmalina, MG </div>
                                 </div>
                             </div>
                             <div class="invoice-items">
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th>Description</th>
-                                            <th>Quantity</th>
-                                            <th>Unit Price</th>
-                                            <th>Line Total</th>
+                                            <th>Descrição</th>
+                                            <th>Quantidade</th>
+                                            <th>Preço</th>
+                                            <th>Valor Total</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Green T-Shirt</td>
+                                            <td>Bermuda Jeans</td>
                                             <td>1</td>
-                                            <td>$49.00</td>
-                                            <td>$49.00</td>
+                                            <td>R$149.00</td>
+                                            <td>R$149.00</td>
                                         </tr>
                                         <tr>
-                                            <td>Game Controller</td>
+                                            <td>Jaqueta Jeans</td>
                                             <td>2</td>
-                                            <td>$99.00</td>
-                                            <td>$198.00</td>
+                                            <td>R$199.00</td>
+                                            <td>R$398.00</td>
                                         </tr>
                                         <tr>
-                                            <td>Mini Speakers</td>
+                                            <td>Bonés</td>
                                             <td>1</td>
-                                            <td>$85.00</td>
-                                            <td>$85.00</td>
+                                            <td>R$85.00</td>
+                                            <td>R$85.00</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="invoice-summary">
                                 <div class="invoice-notes">
-                                    <b>NOTES</b>
+                                    <b>NOTAS</b>
                                     <div>
 
                                     </div>
@@ -89,13 +89,13 @@
                                 <div>
                                     <div class="invoice-details">
                                         <div class="invoice-label">SUBTOTAL</div>
-                                        <div class="invoice-value">$332.00</div>
+                                        <div class="invoice-value">R$632.00</div>
 
-                                        <div class="invoice-label">VAT</div>
+                                        <div class="invoice-label">Desconto</div>
                                         <div class="invoice-value">0</div>
 
                                         <div class="invoice-label">TOTAL</div>
-                                        <div class="invoice-value">$332.00</div>
+                                        <div class="invoice-value">R$632.00</div>
                                     </div>
                                 </div>
                             </div>

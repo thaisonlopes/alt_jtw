@@ -44,24 +44,24 @@ public class ListDemoView {
         List<String> citiesSource = new ArrayList<String>();
         List<String> citiesTarget = new ArrayList<String>();
         
-        citiesSource.add("San Francisco");
-        citiesSource.add("London");
-        citiesSource.add("Paris");
-        citiesSource.add("Istanbul");
-        citiesSource.add("Berlin");
-        citiesSource.add("Barcelona");
-        citiesSource.add("Rome");
+        citiesSource.add("Turmalina");
+        citiesSource.add("Capelinha");
+        citiesSource.add("Veredinha");
+        citiesSource.add("Belo Horizonte");
+        citiesSource.add("Montes Claros");
+        citiesSource.add("Minas Novas");
+        citiesSource.add("Água Boa");
         
         cities1 = new DualListModel<String>(citiesSource, citiesTarget);
 
         cities2 = new ArrayList<String>();
-        cities2.add("San Francisco");
-        cities2.add("London");
-        cities2.add("Paris");
-        cities2.add("Istanbul");
-        cities2.add("Berlin");
-        cities2.add("Barcelona");
-        cities2.add("Rome");
+        cities2.add("Turmalina");
+        cities2.add("Capelinha");
+        cities2.add("Veredinha");
+        cities2.add("Belo Horizonte");
+        cities2.add("Montes Claros");
+        cities2.add("Minas Novas");
+        cities2.add("Água Boa");
 
         this.products = this.service.getProducts();
     }

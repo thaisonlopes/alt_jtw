@@ -16,9 +16,9 @@
 package org.primefaces.apollo.domain;
 
 public enum InventoryStatus {
-    INSTOCK("In Stock"),
-    OUTOFSTOCK("Out of Stock"), 
-    LOWSTOCK("Low Stock");
+    emEstoque("Em Estoque"),
+    foraDeEstoque("Fora De Estoque"), 
+    baixoEstoque("Baixo Estoque");
  
     private String text;
  

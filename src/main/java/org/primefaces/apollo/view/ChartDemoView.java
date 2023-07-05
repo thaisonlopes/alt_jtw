@@ -2,8 +2,8 @@
    Copyright 2009-2022 PrimeTek.
 
    Licensed under PrimeFaces Commercial License, Version 1.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+   you Maio not use this file except in compliance with the License.
+   You Maio obtain a copy of the License at
 
    Licensed under PrimeFaces Commercial License, Version 1.0 (the "License");
 
@@ -198,13 +198,13 @@ public class ChartDemoView implements Serializable {
         data.addChartDataSet(dataSet);
 
         List<String> labels = new ArrayList<>();
-        labels.add("January");
-        labels.add("February");
-        labels.add("March");
-        labels.add("April");
-        labels.add("May");
-        labels.add("June");
-        labels.add("July");
+        labels.add("Janeiro");
+        labels.add("Fevereiro");
+        labels.add("Março");
+        labels.add("Abril");
+        labels.add("Maio");
+        labels.add("Junho");
+        labels.add("Julho");
         data.setLabels(labels);
 
         //Options
@@ -296,7 +296,7 @@ public class ChartDemoView implements Serializable {
         labels.add("Feb");
         labels.add("Mar");
         labels.add("Apr");
-        labels.add("May");
+        labels.add("Maio");
         labels.add("Jun");
         data.setLabels(labels);
         cartesianLinerModel.setData(data);
@@ -364,13 +364,13 @@ public class ChartDemoView implements Serializable {
         data.addChartDataSet(barDataSet);
 
         List<String> labels = new ArrayList<>();
-        labels.add("January");
-        labels.add("February");
-        labels.add("March");
-        labels.add("April");
-        labels.add("May");
-        labels.add("June");
-        labels.add("July");
+        labels.add("Janeiro");
+        labels.add("Fevereiro");
+        labels.add("Março");
+        labels.add("Abril");
+        labels.add("Maio");
+        labels.add("Junho");
+        labels.add("Julho");
         data.setLabels(labels);
         barModel.setData(data);
 
@@ -446,13 +446,13 @@ public class ChartDemoView implements Serializable {
         data.addChartDataSet(barDataSet2);
 
         List<String> labels = new ArrayList<>();
-        labels.add("January");
-        labels.add("February");
-        labels.add("March");
-        labels.add("April");
-        labels.add("May");
-        labels.add("June");
-        labels.add("July");
+        labels.add("Janeiro");
+        labels.add("Fevereiro");
+        labels.add("Março");
+        labels.add("Abril");
+        labels.add("Maio");
+        labels.add("Junho");
+        labels.add("Julho");
         data.setLabels(labels);
         barModel2.setData(data);
 
@@ -516,13 +516,13 @@ public class ChartDemoView implements Serializable {
         data.addChartDataSet(hbarDataSet);
 
         List<String> labels = new ArrayList<>();
-        labels.add("January");
-        labels.add("February");
-        labels.add("March");
-        labels.add("April");
-        labels.add("May");
-        labels.add("June");
-        labels.add("July");
+        labels.add("Janeiro");
+        labels.add("Fevereiro");
+        labels.add("Março");
+        labels.add("Abril");
+        labels.add("Maio");
+        labels.add("Junho");
+        labels.add("Julho");
         data.setLabels(labels);
         hbarModel.setData(data);
 
@@ -593,13 +593,13 @@ public class ChartDemoView implements Serializable {
         data.addChartDataSet(barDataSet3);
 
         List<String> labels = new ArrayList<>();
-        labels.add("January");
-        labels.add("February");
-        labels.add("March");
-        labels.add("April");
-        labels.add("May");
-        labels.add("June");
-        labels.add("July");
+        labels.add("Janeiro");
+        labels.add("Fevereiro");
+        labels.add("Março");
+        labels.add("Abril");
+        labels.add("Maio");
+        labels.add("Junho");
+        labels.add("Julho");
         data.setLabels(labels);
         stackedBarModel.setData(data);
 
@@ -678,13 +678,13 @@ public class ChartDemoView implements Serializable {
         data.addChartDataSet(barDataSet3);
 
         List<String> labels = new ArrayList<>();
-        labels.add("January");
-        labels.add("February");
-        labels.add("March");
-        labels.add("April");
-        labels.add("May");
-        labels.add("June");
-        labels.add("July");
+        labels.add("Janeiro");
+        labels.add("Fevereiro");
+        labels.add("Março");
+        labels.add("Abril");
+        labels.add("Maio");
+        labels.add("Junho");
+        labels.add("Julho");
         data.setLabels(labels);
         stackedGroupBarModel.setData(data);
 
@@ -905,10 +905,10 @@ public class ChartDemoView implements Serializable {
         data.addChartDataSet(dataSet2);
 
         List<String> labels = new ArrayList<>();
-        labels.add("January");
-        labels.add("February");
-        labels.add("March");
-        labels.add("April");
+        labels.add("Janeiro");
+        labels.add("Fevereiro");
+        labels.add("Março");
+        labels.add("Abril");
         data.setLabels(labels);
 
         mixedModel.setData(data);

@@ -1,0 +1,15 @@
+@import './_layout_common.scss';
+
+$bodyBgColor:#f8f9fa !default;  
+$textColor:#495057 !default;  
+$textSecondaryColor:#6c757d !default;  
+$menuBgColor:#ffffff !default;  
+$menuitemActiveBgColor:#ffffff !default;  
+$cardBgColor:#ffffff !default;  
+$dividerColor:#dee2e6 !default;  
+$placeholderColor:#6c6c6c !default;  
+
+:root{
+    --textSecondaryColor:#{$textSecondaryColor};
+    --dividerColor:#{$dividerColor};
+}

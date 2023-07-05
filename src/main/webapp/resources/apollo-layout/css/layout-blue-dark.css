@@ -1167,7 +1167,7 @@ a {
 }
 .login-body .left-side img {
   padding: 100px 0 100px 0;
-  width: 60px;
+  width: 200px;
   height: auto;
 }
 .login-body .left-side h1 {
@@ -2826,6 +2826,15 @@ a {
 }
 .invoice .invoice-summary .invoice-value {
   font-weight: 700;
+}
+
+#selectedProducts legend {
+	background-color: #1565c0;
+	color: #fff;
+	padding: 13px 13px;
+	border-radius: 10px;
+	box-shadow: 4px -4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
 }
 
 @media print {

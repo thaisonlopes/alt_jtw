@@ -11,12 +11,12 @@
             </a>
             <h:form id="config-form" styleClass="layout-config-form">
                 <div class="layout-config-header">
-                    <h3>Theme Customization</h3>
-                    <span>Poseidon offers different themes for layout, topbar, menu etc.</span>
+                    <h3>Customização De Tema</h3>
+                    <span>Oferecemos diferentes temas para layout, menu, etc..</span>
                 </div>
 
                 <p:outputPanel id="menumodes-panel" styleClass="layout-config-section options">
-                    <span class="section-name">Menu Mode</span>
+                    <span class="section-name">Modo De Menu</span>
                     <div class="grid layout-config-options">
                         <p:selectOneRadio layout="responsive" columns="2" value="#{guestPreferences.layoutMode}"
                                           onchange="PrimeFaces.ApolloConfigurator.changeMenuMode(event.target.value)" >
@@ -30,7 +30,7 @@
                 </p:outputPanel>
 
                 <p:outputPanel id="lightdark-panel" styleClass="layout-config-section options">
-                    <span class="section-name">Layout Mode</span>
+                    <span class="section-name">Modo De Layout</span>
                     <div class="grid layout-config-options">
                         <p:selectOneRadio layout="responsive" columns="2" value="#{guestPreferences.darkMode}"
                                           onchange="PrimeFaces.ApolloConfigurator.changeLayout('#{guestPreferences.color}', event.target.value)"   >

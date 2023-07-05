@@ -26,9 +26,9 @@ import jakarta.enterprise.context.SessionScoped;
 @SessionScoped
 public class GuestPreferences implements Serializable {
     
-    private String color = "purple";
+    private String color = "blue";
     
-    private String darkMode = "dim";
+    private String darkMode = "light";
         
     private String layoutMode = "layout-static";
     

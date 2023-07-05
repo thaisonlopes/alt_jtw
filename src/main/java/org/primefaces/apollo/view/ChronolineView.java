@@ -31,10 +31,10 @@ public class ChronolineView {
     @PostConstruct
     public void init() {
         events = new ArrayList<>();
-        events.add(new Event("Ordered", "15/1/2021 10:30", "pi pi-shopping-cart", "#9C27B0", "game-controller.jpg"));
-        events.add(new Event("Processing", "15/1/2021 14:00", "pi pi-cog", "#673AB7"));
-        events.add(new Event("Shipped", "15/1/2021 16:15", "pi pi-envelope", "#FF9800"));
-        events.add(new Event("Delivered", "16/1/2021 10:00", "pi pi-check", "#607D8B"));
+        events.add(new Event("Ordenado", "15/1/2021 10:30", "pi pi-shopping-cart", "#9C27B0", "game-controller.jpg"));
+        events.add(new Event("Em processamento", "15/1/2021 14:00", "pi pi-cog", "#673AB7"));
+        events.add(new Event("Enviado", "15/1/2021 16:15", "pi pi-envelope", "#FF9800"));
+        events.add(new Event("Entregue", "16/1/2021 10:00", "pi pi-check", "#607D8B"));
 
         events2 = new ArrayList<>();
         events2.add("2021");
