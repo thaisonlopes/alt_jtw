@@ -11,6 +11,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * 
+ * @author Thaison Lopes
+ *
+ */
+
 @Entity
 @Table(name = "categoria_produtos")
 public class CategoriaProdutos extends EntityGeneric {

@@ -14,6 +14,12 @@ import java.util.Objects;
 
 import org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.CategoriaProdutos;
 
+/**
+ * 
+ * @author Thaison Lopes
+ *
+ */
+
 @Entity
 @Table(name = "cadastro_produtos")
 public class Produto {
