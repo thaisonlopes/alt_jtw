@@ -19,7 +19,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "categoria_produtos")
-public class CategoriaProdutos extends EntityGeneric {
+public class Categoria extends EntityGeneric {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,14 +32,14 @@ public class CategoriaProdutos extends EntityGeneric {
 	@Column(name = "descricao", unique = true, nullable = false)
 	private String descricao;
 
-	public CategoriaProdutos() {
+	public Categoria() {
 	}
 
-	public CategoriaProdutos(String descricao) {
+	public Categoria(String descricao) {
 		this.descricao = descricao;
 	}
 
-	public CategoriaProdutos(long codigo, String descricao) {
+	public Categoria(long codigo, String descricao) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 	}
@@ -81,7 +81,7 @@ public class CategoriaProdutos extends EntityGeneric {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		CategoriaProdutos other = (CategoriaProdutos) obj;
+		Categoria other = (Categoria) obj;
 		return Objects.equals(idCategoria, other.idCategoria);
 	}
 
