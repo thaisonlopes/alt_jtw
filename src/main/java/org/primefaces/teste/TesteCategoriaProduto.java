@@ -1,6 +1,6 @@
 package org.primefaces.teste;
 
-import org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.CategoriaProdutos;
+import org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.Categoria;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -17,7 +17,7 @@ public class TesteCategoriaProduto {
         try {
             transaction.begin();
 
-            CategoriaProdutos categoriaProduto = new CategoriaProdutos();
+            Categoria categoriaProduto = new Categoria();
             categoriaProduto.setCodigo(1L);
             categoriaProduto.setDescricao("Categoria De Teste");
 
