@@ -1,5 +1,10 @@
 package org.primefaces.apollo.entidades.cadastroProdutos.cadastroDeProdutos;
 
+import java.util.Objects;
+
+import org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.Categoria;
+import org.primefaces.apollo.entidades.superClasse.EntityGeneric;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,10 +14,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
-import java.util.Objects;
-
-import org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.CategoriaProdutos;
-import org.primefaces.apollo.entidades.superClasse.EntityGeneric;
 
 /**
  * 
@@ -47,7 +48,7 @@ public class Produto extends EntityGeneric {
 
 	@ManyToOne
 	@JoinColumn(name = "id_categoria")
-	private CategoriaProdutos id_categoria;
+	private Categoria id_categoria;
 
 	@Column(name = "unidade")
 	private String unidade;
@@ -68,7 +69,7 @@ public class Produto extends EntityGeneric {
 	}
 
 	public Produto(String cod_barra, String nome_do_produto, Integer quantidade, String modelo_marca,
-			CategoriaProdutos id_categoria, String unidade, String observacao, Double preco_compra,
+			Categoria id_categoria, String unidade, String observacao, Double preco_compra,
 			Double preco_venda) {
 		this.cod_barra = cod_barra;
 		this.nome_do_produto = nome_do_produto;
@@ -131,11 +132,11 @@ public class Produto extends EntityGeneric {
 		this.modelo_marca = modelo_marca;
 	}
 
-	public CategoriaProdutos getId_categoria() {
+	public Categoria getId_categoria() {
 		return id_categoria;
 	}
 
-	public void setId_categoria(CategoriaProdutos id_categoria) {
+	public void setId_categoria(Categoria id_categoria) {
 		this.id_categoria = id_categoria;
 	}
 
