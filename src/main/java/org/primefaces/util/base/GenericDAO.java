@@ -3,6 +3,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.primefaces.apollo.entidades.log.Log;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 
@@ -159,7 +161,7 @@ public abstract class GenericDAO implements Serializable {
 
             ex.printStackTrace();
 
-            throw new Exception(ex.getLocalizedMessage());
+            throw new AltException(ex.getLocalizedMessage());
 
         }
 
@@ -281,7 +283,6 @@ public abstract class GenericDAO implements Serializable {
 
         log.setAcao(operacao);
         log.setTela(getTela());
-        log.setItemTela(getItemTela());
 
         if (pojo != null) {
             setLog(log, pojo);
@@ -292,7 +293,7 @@ public abstract class GenericDAO implements Serializable {
 
     private void excecaoTelaNula() {
         if (getTela() == null) {
-            throw new ContabilException("Tela não informada.");
+            throw new AltException("Tela não informada.");
         }
     }
 
@@ -1042,7 +1043,6 @@ public abstract class GenericDAO implements Serializable {
 
         log.setAcao(operacao);
         log.setTela(getTela());
-        log.setItemTela(getItemTela());
 
         if (pojo != null) {
             setLog(log, pojo);
@@ -1054,7 +1054,7 @@ public abstract class GenericDAO implements Serializable {
         Log log;
 
         if (erro != null) {
-            log = new Log(erro);
+            log = new Log();
         } else {
             log = new Log();
         }
