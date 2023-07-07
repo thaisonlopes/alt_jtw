@@ -380,7 +380,7 @@ public abstract class GenericDAO implements Serializable {
      * @return Entidade.
      */
     @SuppressWarnings("unchecked")
-    public <T extends Serializable> T saveOrUpdatePojo(EntityManager session, Serializable pojo) {
+    public <T extends Serializable> T salvarOuAtualizar(EntityManager session, Serializable pojo) {
         pojo = session.merge(pojo);
         return (T) pojo;
     }
@@ -413,7 +413,7 @@ public abstract class GenericDAO implements Serializable {
      * @param pojo
      * @param session
      */
-    public void deletePojo(Serializable pojo, EntityManager session) {
+    public void excluir(Serializable pojo, EntityManager session) {
         validDelete(pojo, session);
         session.remove(session.contains(pojo) ? pojo : session.merge(pojo));
     }
