@@ -9,11 +9,12 @@
 	<ui:define name="viewname">
 		<li>Home</li>
 		<li>/</li>
-		<li><p:link >Cadastro De Produtos</p:link>
-		</li>
+		<li><p:link>Cadastro De Produtos</p:link></li>
 	</ui:define>
 
 	<ui:define name="content">
+		<link rel="stylesheet"
+			href="../../../resources/apollo-layout/css/layout-blue-light.css" />
 		<h:form id="form">
 			<div class="grid crud-demo">
 				<div class="col-12">
@@ -160,7 +161,9 @@
 
 						<p:dialog header="Cadastro De Produtos" showEffect="fade"
 							modal="true" widgetVar="manageProductDialog" responsive="true"
-							width="50%">
+							resizable="false" style="height: 90vh;
+		overflow: auto;">
+
 							<p:outputPanel id="manage-product-content" class="ui-fluid">
 								<p:outputPanel
 									rendered="#{not empty crudDemoView.selectedProduct}">
@@ -169,8 +172,8 @@
 											<div class="field">
 												<p:outputLabel for="name">Código</p:outputLabel>
 												<p:inputText id="name"
-													value="#{crudDemoView.selectedProduct.id}"
-													required="true" disabled="true" />
+													value="#{crudDemoView.selectedProduct.id}" required="true"
+													disabled="true" />
 											</div>
 										</div>
 										<div class="col-12 md:col-4">
