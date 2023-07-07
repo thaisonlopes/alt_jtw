@@ -21,6 +21,8 @@ import jakarta.persistence.Table;
 @Table(name = "categoria_produtos")
 public class Categoria extends EntityGeneric {
 
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_categoria")

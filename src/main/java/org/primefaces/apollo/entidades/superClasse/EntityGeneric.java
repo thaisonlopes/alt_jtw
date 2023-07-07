@@ -14,7 +14,9 @@ import jakarta.persistence.Version;
  *
  */
 @MappedSuperclass
-public class EntityGeneric {
+public class EntityGeneric implements java.io.Serializable {
+
+	private static final long serialVersionUID = 142331852766878778L;
 
 	@Column(name = "dthr_create")
 	private LocalDateTime dthr_create;
