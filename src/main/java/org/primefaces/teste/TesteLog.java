@@ -3,7 +3,7 @@ package org.primefaces.teste;
 import java.time.LocalDateTime;
 
 import org.primefaces.apollo.entidades.log.Log;
-import org.primefaces.apollo.entidades.usuarios.Usuario;
+import org.primefaces.apollo.entidades.usuarios.usuario.Usuario;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

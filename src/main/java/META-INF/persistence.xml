@@ -12,8 +12,6 @@
 		
 		<class>org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.CategoriaProdutos</class>
 		<class>org.primefaces.apollo.entidades.cadastroProdutos.cadastroDeProdutos.CadastroDeProdutos</class>
-		
-		
 			
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>

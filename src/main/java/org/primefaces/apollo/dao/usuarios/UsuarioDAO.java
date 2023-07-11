@@ -8,7 +8,7 @@ import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
-import org.primefaces.apollo.entidades.usuarios.Usuario;
+import org.primefaces.apollo.entidades.usuarios.usuario.Usuario;
 
 public class UsuarioDAO {
 
