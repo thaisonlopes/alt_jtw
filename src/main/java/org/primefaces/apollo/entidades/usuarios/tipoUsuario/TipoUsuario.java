@@ -8,11 +8,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.util.Objects;
 
+import org.primefaces.apollo.entidades.superClasse.EntityGeneric;
+
 @Entity
 @Table(name = "tipo_usuario")
-public class TipoUsuario {
+public class TipoUsuario extends EntityGeneric  {
+	
+	private static final long serialVersionUID = 1L;
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTipoUsuario;
 

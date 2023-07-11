@@ -1,25 +1,23 @@
 package org.primefaces.apollo.entidades.usuarios.usuario;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+
+import java.util.Arrays;
 import java.util.Objects;
+
+import org.primefaces.apollo.entidades.empresa.Empresa;
 import org.primefaces.apollo.entidades.superClasse.EntityGeneric;
 import org.primefaces.apollo.entidades.usuarios.tipoUsuario.TipoUsuario;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario extends EntityGeneric {
+public class Usuario extends EntityGeneric  {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUsuario;
 
@@ -33,27 +31,27 @@ public class Usuario extends EntityGeneric {
     private String senha;
 
     @ManyToOne
-    @JoinColumn(name = "id_tipo_usuario", nullable = false)
-    private TipoUsuario tipoUsuario;
+    @JoinColumn(name = "idTipoUsuario", nullable = false)
+    private TipoUsuario id_tipo_usuario;
 
-    @Column(nullable = false)
-    private Integer empresa;
+    @ManyToOne
+    @JoinColumn(name = "idEmpresa", nullable = false)
+    private Empresa empresa;
 
     @Lob
     @Column
     private byte[] imagem;
 
-    // Construtores, Getters e Setters
-
     public Usuario() {
     }
 
-    public Usuario(Long codigo, String cpf, String senha, TipoUsuario tipoUsuario, Integer empresa) {
+    public Usuario(Long codigo, String cpf, String senha, TipoUsuario id_tipo_usuario, Empresa empresa, byte[] imagem) {
         this.codigo = codigo;
         this.cpf = cpf;
         this.senha = senha;
-        this.tipoUsuario = tipoUsuario;
+        this.id_tipo_usuario = id_tipo_usuario;
         this.empresa = empresa;
+        this.imagem = imagem;
     }
 
     public Integer getIdUsuario() {
@@ -88,19 +86,19 @@ public class Usuario extends EntityGeneric {
         this.senha = senha;
     }
 
-    public TipoUsuario getTipoUsuario() {
-        return tipoUsuario;
+    public TipoUsuario getId_tipo_usuario() {
+        return id_tipo_usuario;
     }
 
-    public void setTipoUsuario(TipoUsuario tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
+    public void setId_tipo_usuario(TipoUsuario id_tipo_usuario) {
+        this.id_tipo_usuario = id_tipo_usuario;
     }
 
-    public Integer getEmpresa() {
+    public Empresa getEmpresa() {
         return empresa;
     }
 
-    public void setEmpresa(Integer empresa) {
+    public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
     }
 
@@ -113,31 +111,17 @@ public class Usuario extends EntityGeneric {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Usuario usuario = (Usuario) o;
+        return Objects.equals(idUsuario, usuario.idUsuario) && Objects.equals(codigo, usuario.codigo) && Objects.equals(cpf, usuario.cpf) && Objects.equals(senha, usuario.senha) && Objects.equals(id_tipo_usuario, usuario.id_tipo_usuario) && Objects.equals(empresa, usuario.empresa) && Arrays.equals(imagem, usuario.imagem);
+    }
+
+    @Override
     public int hashCode() {
-        return Objects.hash(idUsuario);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        Usuario usuario = (Usuario) obj;
-        return Objects.equals(idUsuario, usuario.idUsuario);
-    }
-
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "idUsuario=" + idUsuario +
-                ", codigo=" + codigo +
-                ", cpf='" + cpf + '\'' +
-                ", senha='" + senha + '\'' +
-                ", tipoUsuario=" + tipoUsuario +
-                ", empresa=" + empresa +
-                '}';
+        int result = Objects.hash(idUsuario, codigo, cpf, senha, id_tipo_usuario, empresa);
+        result = 31 * result + Arrays.hashCode(imagem);
+        return result;
     }
 }

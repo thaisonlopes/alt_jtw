@@ -7,9 +7,10 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 	 
 		<class>org.primefaces.apollo.entidades.log.Log</class>
-		<class>org.primefaces.apollo.entidades.usuarios.Usuario</class>
+		<class>org.primefaces.apollo.entidades.usuarios.usuario.Usuario</class>
+		<class>org.primefaces.apollo.entidades.usuarios.tipoUsuario</class>
 		<class>org.primefaces.apollo.entidades.empresa.Empresa</class>
-		
+	
 		<class>org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.CategoriaProdutos</class>
 		<class>org.primefaces.apollo.entidades.cadastroProdutos.cadastroDeProdutos.CadastroDeProdutos</class>
 			
