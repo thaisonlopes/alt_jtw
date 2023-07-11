@@ -6,12 +6,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 import java.util.Objects;
+
+import org.primefaces.apollo.entidades.superClasse.EntityGeneric;
 
 @Entity
 @Table(name = "empresa")
-public class Empresa {
-    @Id
+public class Empresa extends EntityGeneric {
+
+	private static final long serialVersionUID = 9203518375554698874L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEmpresa;
 
@@ -23,6 +29,10 @@ public class Empresa {
 
     @Column(name = "tipo_logradouro")
     private String tipo_logradouro;
+
+
+	@Column(name = "codigo", nullable = false)
+	private long codigo;
 
     private String bairro;
 

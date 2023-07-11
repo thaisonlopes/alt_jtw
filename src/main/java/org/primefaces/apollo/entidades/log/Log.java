@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-import org.primefaces.apollo.entidades.usuarios.Usuario;
+import org.primefaces.apollo.entidades.usuarios.usuario.Usuario;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

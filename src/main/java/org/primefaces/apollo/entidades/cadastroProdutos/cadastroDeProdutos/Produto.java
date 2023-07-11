@@ -24,20 +24,22 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 @Table(name = "cadastro_produtos")
 public class Produto extends EntityGeneric {
+
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_cadastro_produtos")
 	private long id_cadastro_produtos;
 
-	@NotNull
-	@Column(name = "codigo")
+	@Column(name = "codigo", nullable = false)
 	private long codigo;
 
 	@Column(name = "cod_barra")
 	private String cod_barra;
 
-	@NotNull
-	@Column(name = "nome_do_produto", unique = true)
+
+	@Column(name = "nome_do_produto", unique = true, nullable = false)
 	private String nome_do_produto;
 
 	@Column(name = "quantidade")
