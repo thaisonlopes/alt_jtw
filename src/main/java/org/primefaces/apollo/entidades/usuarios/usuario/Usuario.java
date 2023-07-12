@@ -32,7 +32,7 @@ public class Usuario extends EntityGeneric  {
 
     @ManyToOne
     @JoinColumn(name = "idTipoUsuario", nullable = false)
-    private TipoUsuario id_tipo_usuario;
+    private TipoUsuario idTipoUsuario;
 
     @ManyToOne
     @JoinColumn(name = "idEmpresa", nullable = false)
@@ -45,11 +45,11 @@ public class Usuario extends EntityGeneric  {
     public Usuario() {
     }
 
-    public Usuario(Long codigo, String cpf, String senha, TipoUsuario id_tipo_usuario, Empresa empresa, byte[] imagem) {
+    public Usuario(Long codigo, String cpf, String senha, TipoUsuario idTipoUsuario, Empresa empresa, byte[] imagem) {
         this.codigo = codigo;
         this.cpf = cpf;
         this.senha = senha;
-        this.id_tipo_usuario = id_tipo_usuario;
+        this.idTipoUsuario = idTipoUsuario;
         this.empresa = empresa;
         this.imagem = imagem;
     }
@@ -86,12 +86,12 @@ public class Usuario extends EntityGeneric  {
         this.senha = senha;
     }
 
-    public TipoUsuario getId_tipo_usuario() {
-        return id_tipo_usuario;
+    public TipoUsuario getidTipoUsuario() {
+        return idTipoUsuario;
     }
 
-    public void setId_tipo_usuario(TipoUsuario id_tipo_usuario) {
-        this.id_tipo_usuario = id_tipo_usuario;
+    public void setidTipoUsuario(TipoUsuario idTipoUsuario) {
+        this.idTipoUsuario = idTipoUsuario;
     }
 
     public Empresa getEmpresa() {
@@ -115,12 +115,12 @@ public class Usuario extends EntityGeneric  {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Usuario usuario = (Usuario) o;
-        return Objects.equals(idUsuario, usuario.idUsuario) && Objects.equals(codigo, usuario.codigo) && Objects.equals(cpf, usuario.cpf) && Objects.equals(senha, usuario.senha) && Objects.equals(id_tipo_usuario, usuario.id_tipo_usuario) && Objects.equals(empresa, usuario.empresa) && Arrays.equals(imagem, usuario.imagem);
+        return Objects.equals(idUsuario, usuario.idUsuario) && Objects.equals(codigo, usuario.codigo) && Objects.equals(cpf, usuario.cpf) && Objects.equals(senha, usuario.senha) && Objects.equals(idTipoUsuario, usuario.idTipoUsuario) && Objects.equals(empresa, usuario.empresa) && Arrays.equals(imagem, usuario.imagem);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(idUsuario, codigo, cpf, senha, id_tipo_usuario, empresa);
+        int result = Objects.hash(idUsuario, codigo, cpf, senha, idTipoUsuario, empresa);
         result = 31 * result + Arrays.hashCode(imagem);
         return result;
     }

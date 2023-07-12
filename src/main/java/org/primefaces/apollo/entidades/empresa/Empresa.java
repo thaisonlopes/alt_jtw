@@ -55,9 +55,10 @@ public class Empresa extends EntityGeneric {
     public Empresa() {
     }
 
-    public Empresa(String cnpj, String nome, String tipo_logradouro, String bairro, String logradouro, String numero,
+    public Empresa(Long codigo,String cnpj, String nome, String tipo_logradouro, String bairro, String logradouro, String numero,
             String municipio, String uf, String telefone, String nome_contato, String telefone_contato) {
-        this.cnpj = cnpj;
+        this.codigo = codigo;
+    	this.cnpj = cnpj;
         this.nome = nome;
         this.tipo_logradouro = tipo_logradouro;
         this.bairro = bairro;
@@ -69,8 +70,24 @@ public class Empresa extends EntityGeneric {
         this.nome_contato = nome_contato;
         this.telefone_contato = telefone_contato;
     }
+    
+    public String getTipo_logradouro() {
+		return tipo_logradouro;
+	}
 
-    public Long getIdEmpresa() {
+	public void setTipo_logradouro(String tipo_logradouro) {
+		this.tipo_logradouro = tipo_logradouro;
+	}
+
+	public long getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(long codigo) {
+		this.codigo = codigo;
+	}
+
+	public Long getIdEmpresa() {
         return idEmpresa;
     }
 
