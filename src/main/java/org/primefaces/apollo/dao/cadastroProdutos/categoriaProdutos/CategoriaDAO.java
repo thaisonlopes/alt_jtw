@@ -3,7 +3,6 @@ package org.primefaces.apollo.dao.cadastroProdutos.categoriaProdutos;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.primefaces.apollo.entidades.cadastroProdutos.categoriaProdutos.Categoria;
 import org.primefaces.apollo.entidades.log.Log;

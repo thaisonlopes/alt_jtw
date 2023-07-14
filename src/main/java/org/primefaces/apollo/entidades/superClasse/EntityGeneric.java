@@ -1,8 +1,15 @@
 package org.primefaces.apollo.entidades.superClasse;
 
 import java.time.LocalDateTime;
+
+import org.primefaces.apollo.entidades.empresa.Empresa;
 import org.primefaces.util.acesso.UserAndDate;
+import org.primefaces.util.base.AltException;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
@@ -31,7 +38,11 @@ public class EntityGeneric implements java.io.Serializable {
 	private int cod_usuario_update;
 
 	@Version
-	private Integer version;
+	private Integer versao;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "empresa", nullable = false)
+	private Empresa empresa;
 
 	public LocalDateTime getDthr_create() {
 		return dthr_create;
@@ -65,12 +76,12 @@ public class EntityGeneric implements java.io.Serializable {
 		this.cod_usuario_update = cod_usuario_update;
 	}
 
-	public Integer getVersion() {
-		return version;
+	public Integer getVersao() {
+		return versao;
 	}
 
-	public void setVersion(Integer version) {
-		this.version = version;
+	public void setVersao(Integer versao) {
+		this.versao = versao;
 	}
 
 	@PrePersist
@@ -89,6 +100,17 @@ public class EntityGeneric implements java.io.Serializable {
 				public void setDateTime(LocalDateTime dateTime) {
 					dthr_create = dateTime;
 					dthr_update = dateTime;
+				}
+				
+				@Override
+				public void setEmpresaAcesso(Empresa emp) {
+					if (empresa == null || empresa.getCodigo() <= 0) {
+                        if (emp == null) {
+                            throw new AltException("Empresa inválida.\nSessão pode está expirada.");
+                        }
+                        empresa = emp;
+                    }
+					
 				}
 
 			};
@@ -112,6 +134,12 @@ public class EntityGeneric implements java.io.Serializable {
 				@Override
 				public void setDateTime(LocalDateTime dateTime) {
 					dthr_update = dateTime;
+				}
+				
+				@Override
+				public void setEmpresaAcesso(Empresa empresa) {
+					// Não implmentar essa função, pois no update não pode ser altearda
+					
 				}
 
 			};

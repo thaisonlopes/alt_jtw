@@ -5,15 +5,20 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 
+import java.time.LocalDateTime;
 import java.util.Objects;
 
-import org.primefaces.apollo.entidades.superClasse.EntityGeneric;
+import org.primefaces.util.acesso.UserAndDate;
+
 
 @Entity
 @Table(name = "empresa")
-public class Empresa extends EntityGeneric {
+public class Empresa implements java.io.Serializable {
 
 	private static final long serialVersionUID = 9203518375554698874L;
 
@@ -30,8 +35,7 @@ public class Empresa extends EntityGeneric {
     @Column(name = "tipo_logradouro")
     private String tipo_logradouro;
 
-
-	@Column(name = "codigo", nullable = false)
+	@Column(name = "codigo", nullable = false, unique = true)
 	private long codigo;
 
     private String bairro;
@@ -51,6 +55,21 @@ public class Empresa extends EntityGeneric {
 
     @Column(name = "telefone_contato")
     private String telefone_contato;
+    
+    @Column(name = "dthr_create")
+	private LocalDateTime dthr_create;
+
+	@Column(name = "cod_usuario_create")
+	private int cod_usuario_create;
+
+	@Column(name = "dthr_update")
+	private LocalDateTime dthr_update;
+
+	@Column(name = "cod_usuario_update")
+	private int cod_usuario_update;
+
+	@Version
+	private Integer versao;
 
     public Empresa() {
     }
@@ -213,4 +232,64 @@ public class Empresa extends EntityGeneric {
                 ", telefone_contato='" + telefone_contato + '\'' +
                 '}';
     }
+    
+    @PrePersist
+	protected void prePersist() {
+		try {
+
+			UserAndDate userAndDate = new UserAndDate() {
+
+				@Override
+				public void setUser(Integer codigo) {
+					cod_usuario_create = codigo;
+					cod_usuario_update = codigo;
+				}
+
+				@Override
+				public void setDateTime(LocalDateTime dateTime) {
+					dthr_create = dateTime;
+					dthr_update = dateTime;
+				}
+				
+				@Override
+				public void setEmpresaAcesso(Empresa emp) {
+					
+					
+				}
+
+			};
+			userAndDate.iniciarDados();
+
+		} catch (Exception e) {
+		}
+	}
+
+	@PreUpdate
+	protected void preUpdateDadosUsuarioDataLanc() {
+		try {
+
+			UserAndDate userAndDate = new UserAndDate() {
+
+				@Override
+				public void setUser(Integer codigo) {
+					cod_usuario_update = codigo;
+				}
+
+				@Override
+				public void setDateTime(LocalDateTime dateTime) {
+					dthr_update = dateTime;
+				}
+				
+				@Override
+				public void setEmpresaAcesso(Empresa empresa) {
+					// Não implmentar essa função, pois no update não pode ser altearda
+					
+				}
+
+			};
+			userAndDate.iniciarDados();
+
+		} catch (Exception e) {
+		}
+	}
 }
